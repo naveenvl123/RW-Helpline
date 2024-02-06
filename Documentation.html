@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation</title>
+
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="https://www.rockwellautomation.com/etc.clientlibs/rockwell-aem-base/clientlibs/clientlib-base/resources/favicons/favicon-16x16.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cgaywfwpexqmkesgvg7zpw.on.drv.tw/RW/fancybox/jquery.fancybox.min.js"></script>
+  <link rel="stylesheet" href="https://cgaywfwpexqmkesgvg7zpw.on.drv.tw/RW/fancybox/jquery.fancybox.min.css" />
+  <style>
+    * {
+      outline: none;
+    }
+
+    ::selection {
+      background: #00000011;
+    }
+
+    rgba(0, 0, 0, 0.057)
+
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    .content {
+      cursor: pointer;
+    }
+
+    .content:hover {
+      background-color: #44444444;
+    }
+
+    .btn-hide {
+      display: none;
+    }
+
+    .copied {
+      opacity: 0;
+      position: fixed;
+      color: #fff;
+      padding: 5px 20px 12px 27px;
+      background-color: #444444aa;
+      transition: .6s opacity;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      z-index: 99;
+      top: 0;
+      right: 0;
+      border-radius: 0 0 0 10px;
+    }
+
+    .popup_main {
+      display: contents;
+    }
+
+    .open_popup {
+      background: tomato;
+      border: none;
+      padding: 5px 15px;
+      color: #fff;
+      cursor: pointer;
+      width: 85px;
+    }
+
+    .popup_body {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      -webkit-transition: 300ms;
+      -moz-transition: 300ms;
+      -o-transition: 300ms;
+      -ms-transition: 300ms;
+      transition: 300ms;
+    }
+
+    .popup_body_show {
+      display: block;
+      -webkit-transition: 300ms;
+      -moz-transition: 300ms;
+      -o-transition: 300ms;
+      -ms-transition: 300ms;
+      transition: 300ms;
+    }
+
+    .popup_back {
+      background: rgba(0, 0, 0, 0.4);
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    .popup_contain {
+      position: relative;
+      background: #fff;
+      width: fit-content;
+      min-width: auto;
+      margin: 100px auto 50px;
+      min-height: 150px;
+      padding: 10px;
+    }
+
+    .popup_close {
+      background: red;
+      padding: 3px 10px 5px;
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      color: #fff;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    textarea {
+      width: 80vw;
+      height: 50vh;
+      border: none;
+    }
+
+    table {
+      /* border: 1px solid #ddd; */
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin-bottom: 10px;
+      max-width: 100%;
+      width: 100%;
+      padding: 10px;
+    }
+
+    table>thead>tr>th,
+    table>thead>tr>td,
+    table>tbody>tr>th,
+    table>tbody>tr>td,
+    table>tfoot>tr>th,
+    table>tfoot>tr>td {
+      border: 1px solid #ddd;
+      line-height: 20px;
+      padding: 10px 10px 0 10px;
+      min-height: 33px;
+    }
+
+    th {
+      background: #444;
+      color: #fff;
+      font-weight: normal;
+      vertical-align: bottom;
+    }
+
+    table th {
+      text-align: left;
+    }
+
+    table,
+    table th,
+    table td,
+    table tr,
+    table tr th,
+    table tr td,
+    table thead,
+    table thead th,
+    table thead td,
+    table thead tr,
+    table thead tr th,
+    table thead tr td,
+    table tbody,
+    table tbody th,
+    table tbody td,
+    table tbody tr,
+    table tbody tr th,
+    table tbody tr td,
+    table tfoot,
+    table tfoot th,
+    table tfoot td,
+    table tfoot tr,
+    table tfoot tr th,
+    table tfoot tr td {
+      display: block;
+    }
+
+    table>thead {
+      float: left;
+    }
+
+    table>tbody>tr {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    table>tbody {
+      width: auto;
+      white-space: nowrap;
+      overflow-x: auto;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: 15px;
+      color: #333;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    li {
+      padding: 5px 0;
+    }
+
+    .img-icon {
+      width: 25px;
+    }
+
+    .st-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      font-family: 'Josefin Slab', 'Myriad Pro', Arial, sans-serif;
+    }
+
+    .st-container>input,
+    .st-container>a {
+      position: fixed;
+      bottom: 0px;
+      width: 33.33%;
+      cursor: pointer;
+      font-size: 16px;
+      height: 34px;
+      line-height: 34px;
+    }
+
+    .st-container>input {
+      opacity: 0;
+      z-index: 1000;
+    }
+
+    .st-container>a {
+      z-index: 10;
+      font-weight: 700;
+      background: #3e3e3e;
+      color: #fff;
+      text-align: center;
+      text-shadow: 1px 1px 1px rgba(151, 24, 64, 0.2);
+    }
+
+    .st-container:before {
+      content: '';
+      position: fixed;
+      width: 100%;
+      height: 34px;
+      background: #3e3e3e;
+      z-index: 9;
+      bottom: 0;
+    }
+
+    #st-control-1,
+    #st-control-1+a {
+      left: 0;
+    }
+
+    #st-control-2,
+    #st-control-2+a {
+      left: 33.33%;
+    }
+
+    #st-control-3,
+    #st-control-3+a {
+      left: 66.66%;
+    }
+
+    /* #st-control-4,
+    #st-control-4+a {
+      left: 75%;
+    } */
+
+    .st-container>input:checked+a,
+    .st-container>input:checked:hover+a {
+      background: #151515;
+    }
+
+    .st-container>input:checked+a:after,
+    .st-container>input:checked:hover+a:after {
+      bottom: 100%;
+      border: solid transparent;
+      content: '';
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-bottom-color: #151515;
+      border-width: 20px;
+      left: 50%;
+      margin-left: -20px;
+    }
+
+    .st-container>input:hover+a {
+      background: #252525;
+    }
+
+    .st-container>input:hover+a:after {
+      border-bottom-color: #252525;
+    }
+
+    .st-scroll,
+    .st-panel {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .st-scroll {
+      top: 0;
+      left: 0;
+      -webkit-transition: all 0.6s ease-in-out;
+      -moz-transition: all 0.6s ease-in-out;
+      -o-transition: all 0.6s ease-in-out;
+      -ms-transition: all 0.6s ease-in-out;
+      transition: all 0.6s ease-in-out;
+
+      /* Let's enforce some hardware acceleration */
+      -webkit-transform: translate3d(0, 0, 0);
+      -webkit-backface-visibility: hidden;
+    }
+
+    .st-panel {
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    #st-control-1:checked~.st-scroll {
+      -webkit-transform: translateY(0%);
+      -moz-transform: translateY(0%);
+      -o-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      transform: translateY(0%);
+    }
+
+    #st-control-2:checked~.st-scroll {
+      -webkit-transform: translateY(-100%);
+      -moz-transform: translateY(-100%);
+      -o-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+      transform: translateY(-100%);
+    }
+
+    #st-control-3:checked~.st-scroll {
+      -webkit-transform: translateY(-200%);
+      -moz-transform: translateY(-200%);
+      -o-transform: translateY(-200%);
+      -ms-transform: translateY(-200%);
+      transform: translateY(-200%);
+    }
+
+    #st-control-4:checked~.st-scroll {
+      -webkit-transform: translateY(-300%);
+      -moz-transform: translateY(-300%);
+      -o-transform: translateY(-300%);
+      -ms-transform: translateY(-300%);
+      transform: translateY(-300%);
+    }
+
+    #st-control-5:checked~.st-scroll {
+      -webkit-transform: translateY(-400%);
+      -moz-transform: translateY(-400%);
+      -o-transform: translateY(-400%);
+      -ms-transform: translateY(-400%);
+      transform: translateY(-400%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="st-container">
+
+      <input type="radio" name="radio-set" checked="checked" id="st-control-1" />
+      <a href="#st-panel-1">Email</a>
+      <input type="radio" name="radio-set" id="st-control-2" />
+      <a href="#st-panel-2">Campaign</a>
+      <input type="radio" name="radio-set" id="st-control-3" />
+      <a href="#st-panel-3">Email Group</a>
+
+      <div class="st-scroll">
+
+        <section class="st-panel" id="st-panel-1">
+          <table>
+            <thead>
+              <tr>
+                <th>Region</th>
+                <th>Email Header</th>
+                <th>Email Footer</th>
+                <th>OFT Footer</th>
+                <th>Link</th>
+                <th>From Name</th>
+                <th>From Address</th>
+                <th>Reply Name</th>
+                <th>Reply Address</th>
+                <th>Seed List</th>
+                <th>Time Zone</th>
+                <th>Country</th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th><b>EN</b></th>
+                <td class="content">AP_EN_Responsive</td>
+                <td class="content">AP - SEA - Responsive</td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">EN</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
+  <tbody>
+      <tr>
+        <td id="footeh"
+              style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;">
+              <p>Copyright &copy; 2024&nbsp;Rockwell Automation, Inc. All rights reserved.<br />
+                  To view a complete list of Rockwell Automation trademarks please <b><a data-targettype="webpage"
+                          href="https://www.rockwellautomation.com/en-id/company/about-us/legal-notices/trademarks.HTML?elqTrack=false"
+                          style="color: #5e5e5e;
+                  font-weight: bold;" title="Trademarks">click here</a></b>.<br />
+                  Trademarks not belonging to Rockwell Automation are property of their respective companies.<br />
+                  <br />
+                  Rockwell Automation Southeast Asia Pte Ltd,<br />
+                  No 2 Corporation Road, #04-05/06 Corporation Place, Singapore 618494.<br />
+                  Tel: (65) 6510 6688, Fax: (65) 6510 6699
+              </p>
+          </td>
+      </tr>
+  </tbody>
+</table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="content">en-us</td>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">AP_SEA_Seedlist_2022_10</td>
+                <td class="content">(UTC+08:00) Kuala Lumpur, Singapore</td>
+                <td class="content">PH,PK,MY,SG,MM</td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+              </tr>
+
+              <tr>
+                <th><b>SEA</b></th>
+                <td class="content">AP_EN_Responsive</td>
+                <td class="content">AP - SEA - Responsive</td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">SEA</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
+  <tbody>
+      <tr>
+          <td id="footeh"
+              style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;">
+              <p>Copyright &copy; 2024&nbsp;Rockwell Automation, Inc. All rights reserved.<br />
+                  To view a complete list of Rockwell Automation trademarks please <b><a data-targettype="webpage"
+                          href="https://www.rockwellautomation.com/en-id/company/about-us/legal-notices/trademarks.HTML?elqTrack=false"
+                          style="color: #5e5e5e;
+                  font-weight: bold;" title="Trademarks">click here</a></b>.<br />
+                  Trademarks not belonging to Rockwell Automation are property of their respective companies.<br />
+                  <br />
+                  Rockwell Automation Southeast Asia Pte Ltd,<br />
+                  No 2 Corporation Road, #04-05/06 Corporation Place, Singapore 618494.<br />
+                  Tel: (65) 6510 6688, Fax: (65) 6510 6699
+              </p>
+          </td>
+      </tr>
+  </tbody>
+</table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="content">en-sg</td>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">seamarcom@rockwellautomation.com</td>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+              </tr>
+
+              <tr>
+                <th><b>SP</b></th>
+                <td class="content">AP_EN_Responsive</td>
+                <td class="content">AP - AU - Responsive</td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">SP</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
+  <tbody>
+      <tr>
+          <td id="footeh"
+              style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;">
+              Copyright &copy; 2024&nbsp;Rockwell Automation, Inc. All rights reserved.<br />
+              To view a complete list of Rockwell Automation trademarks please <b><a data-targettype="webpage"
+                      href="https://www.rockwellautomation.com/en-au/company/about-us/legal-notices/trademarks.html?elqTrack=false"
+                      style="color: #5e5e5e;
+                  font-weight: bold;" title="Trademarks">click here</a></b>.<br />
+              Trademarks not belonging to Rockwell Automation are property of their respective companies.<br />
+              <br />
+              Rockwell Automation Australia Ltd,<br />
+              248 Burwood Road, Hawthorn Victoria 3122, Australia<br />
+              Tel: +61 3 9757 1111
+          </td>
+      </tr>
+  </tbody>
+</table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="content">en-au</td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+              </tr>
+
+              <tr>
+                <th><b>AU</b></th>
+                <td class="content">AP_EN_Responsive</td>
+                <td class="content">AP - AU - Responsive</td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">AU</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
+  <tbody>
+      <tr>
+          <td id="footeh"
+              style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;">
+              Copyright &copy; 2024&nbsp;Rockwell Automation, Inc. All rights reserved.<br />
+              To view a complete list of Rockwell Automation trademarks please <b><a data-targettype="webpage"
+                      href="https://www.rockwellautomation.com/en-au/company/about-us/legal-notices/trademarks.html?elqTrack=false"
+                      style="color: #5e5e5e;
+                  font-weight: bold;" title="Trademarks">click here</a></b>.<br />
+              Trademarks not belonging to Rockwell Automation are property of their respective companies.<br />
+              <br />
+              Rockwell Automation Australia Ltd,<br />
+              248 Burwood Road, Hawthorn Victoria 3122, Australia<br />
+              Tel: +61 3 9757 1111
+          </td>
+      </tr>
+  </tbody>
+</table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="content">en-au</td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+              </tr>
+
+              <tr>
+                <th><b>NZ</b></th>
+                <td class="content">AP_EN_Responsive</td>
+                <td class="content">AP - NZ - Responsive</td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">NZ</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
+  <tbody>
+      <tr>
+          <td id="footeh"
+              style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;">
+              Copyright &copy; 2024&nbsp;Rockwell Automation, Inc. All rights reserved.<br />
+              To view a complete list of Rockwell Automation trademarks please <b><a data-targettype="webpage"
+                      href="https://www.rockwellautomation.com/en-nz/company/about-us/legal-notices/trademarks.HTML?elqTrack=false"
+                      style="color: #5e5e5e;
+                  font-weight: bold;" title="Trademarks">click here</a></b>.<br />
+              Trademarks not belonging to Rockwell Automation are property of their respective companies.<br />
+              <br />
+              Rockwell Automation (N.Z.) Ltd,<br />
+              2B Pacific Rise, Mt Wellington, Auckland, New Zealand<br />
+              Tel: +64 9 276 3070 Fax: +64 9 276 5406
+          </td>
+      </tr>
+  </tbody>
+</table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="content">en-nz</td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+              </tr>
+
+              <tr>
+                <th><b>IN</b></th>
+                <td class="content">AP_EN_Responsive</td>
+                <td class="content">AP - NZ - Responsive</td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">IN</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
+  <tbody>
+      <tr>
+          <td id="footeh"
+              style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 16px; color: #5e5e5e; text-align: left;">
+              Copyright &copy; 2024 Rockwell Automation, Inc. All rights reserved.<br />
+              To view a complete list of Rockwell Automation trademarks please <b><a data-targettype="webpage"
+                      href="https://www.rockwellautomation.com/global/legal-notices/overview.page?elqTrack=false"
+                      style="color: #5e5e5e;
+                  font-weight: bold;" title="Trademarks">click here</a></b><br />
+              Trademarks not belonging to Rockwell Automation are property of their respective companies.<br />
+              Rockwell Automation India Pvt. Ltd, A-66, Sector-64, Noida 201301, Uttar Pradesh, India.<br />
+              Tel +91 120 467 1694, 95 Fax +91 120 421 7929, 31</td>
+      </tr>
+  </tbody>
+</table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="content">en-in</td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+              </tr>
+
+              <tr>
+                <th><b>KR</b></th>
+                <td class="content">KR Responsive</td>
+                <td class="content">AP - KR - Responsive</td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">KR</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+          <td width="16">&nbsp;</th>
+          <td
+              style="font-size: 10px; font:Gulim; line-height: 12px; color: #5e5e5e; text-align: left; ; padding-top:10px; font-family:Malgun Gothic ">
+              <font face="Arial">Copyright&copy; 2024 Rockwell Automation, Inc. All rights
+                  reserved.</font><br />
+              <br />
+              명시된 제품과 솔루션의 명칭은 <font face="Arial">Rockwell Automation, Inc.</font> 의 상표
+              자산입니다.<br />
+              그 외의 모든 상표 및 등록 상표는 각 해당 기업의 자산입니다.<br />
+              <br />
+              캠페인에 대한 문의 및 개선사항은 <a href="mailto:korea_marketing@rockwellautomation.com">
+                  <font face="Arial">RA Korea Marketing</font>
+              </a> 으로 부탁드립니다<br />
+              <br />
+              로크웰 오토메이션 코리아(주), 서울특별시 강남구 논현로 <font face="Arial">430</font> (역삼동, 아세아타워)
+              <font face="Arial">6,7F</font> (우편번호: <font face="Arial">06223</font>)<br />
+              &nbsp;
+          </td>
+          <td width="16">&nbsp;</td>
+      </tr>
+  </tbody>
+</table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="content">ko-kr</td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+              </tr>
+
+              <tr>
+                <th><b>TW</b></th>
+                <td class="content">TW Responsive</td>
+                <td class="content">AP - TW - Responsive - Updated Jul 2019</td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">TW</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
+  <tbody>
+      <tr>
+          <td id="footeh"
+              style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;">
+              <p>Copyright &copy; 2024&nbsp;Rockwell Automation, Inc. All rights reserved.<br />
+                  請<b><a data-targettype="webpage"
+                          href="https://www.rockwellautomation.com/global/legal-notices/overview.page?elqTrack=false"
+                          style="color: #5e5e5e;
+                  font-weight: bold;" title="Trademarks">按此</a></b>瀏覽完整洛克威爾自動化公司之註冊商標。<br />
+                  凡不屬於洛克威爾自動化之商標均為其所屬公司所有。<br />
+                  <br />
+                  台灣洛克威爾國際股份有限公司 Rockwell Automation Taiwan Co., Ltd.<br />
+                  台北市104建國北路二段120號14樓<br />
+                  Tel: +886-2-6618-8288<br />
+                  &nbsp;
+              </p>
+          </td>
+      </tr>
+  </tbody>
+</table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="content">zh-tw</td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+              </tr>
+
+              <tr>
+                <th><b>CN</b></th>
+                <td class="content">AP - CN - 2021</td>
+                <td class="content">AP - CN - Responsive</td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">CN</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
+  <tbody>
+      <tr>
+          <td id="footeh"
+              style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;">
+              <p>版权所有&copy;2024罗克韦尔自动化（中国）有限公司。保留所有权利<br />
+                  要查看罗克韦尔自动化（中国）公司的商标的完整列表，请点击<b><a data-targettype="webpage"
+                          href="https://www.rockwellautomation.com/zh-cn/company/about-us/legal-notices/trademarks.html?elqTrack=false"
+                          style="color: #5e5e5e;
+                                                                                          font-weight: bold;"
+                          title="Trademarks">这里</a></b><br />
+                  不属于罗克韦尔自动化的商标是其各自公司的财产。<br />
+                  <br />
+                  上海市漕河泾开发区虹梅路1801号B区宏业大厦1楼，6-9楼，邮编200233
+              </p>
+          </td>
+      </tr>
+  </tbody>
+</table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="content">.com.cn</span>/<span class="content">zh-cn</span></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+              </tr>
+
+              <tr>
+                <th><b>JP</b></th>
+                <td>
+                  <span class="content">AP - Blank Header</span>
+                  <div class="popup_main">
+                    <button class="open_popup">HTML</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly>
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody>
+    <tr>
+      <th align="center" style="font-family:MS PGothic; font-size:11px; padding-bottom:10px; color:#6d6e71">メールの表示に問題がある場合は、<a href="https://app.response.rockwellautomation.com/e/es.aspx?s=~~eloqua..type--emailfield..syntax--siteid..innerText--siteid..encodeFor--url~~&e=~~eloqua..type--emailfield..syntax--elqemailsaveguid..innerText--elqemailsaveguid..encodeFor--url~~&elqTrackId=b57d96689eaf48969bae47a6eb748d3c" style="text-decoration:none;font-family:Gulim; font-size:11px;" target="_blank">こちら</a>をクリックして Web ブラウザで表示してください。</th>
+    </tr>
+  </tbody>
+</table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span class="content">AP - Blank Footer</span>
+                  <div class="popup_main">
+                    <button class="open_popup">HTML</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly>
+                              <table align="center" bgcolor="#D4D6D7" border="0" cellpadding="5" cellspacing="0">
+                                <tbody>
+                                  <tr>
+                                    <th id="footer" style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;" bgcolor="#D4D6D7h>
+                                    <p>ロックウェルオートメーションジャパン株式会社<br />
+                                    〒104-0033東京都中央区新川1-3-17新川三幸ビルTEL: 03-3206-2784<br />
+                                    Copyright&copy;2024 Rockwell Automation, Inc. All rights reserved.</p>
+
+                                    <p>ロックウェル・オートメーションについては、<b><a data-targettype="webpage" href="https://www.rockwellautomation.com/ja_JP/overview.page?elqTrackId=22f6e3340803479492bd9c44fd8dae99" style="color: #5e5e5e;
+                                                  font-weight: bold;" title="こちら">こちら</a></b>をご覧ください。<br />
+                                    本メールは、弊社担当者と名刺交換をさせていただいた皆様、<br />
+                                    弊社のイベントにお申込・ご参加頂いた皆様、メール配信をご希望いただいた皆様にお届けしています。<br />
+                                    今後の配信をご希望されない場合、または登録内容の変更を希望される場合は、<a data-targettype="webpage" href="https://map.rockwellautomation.com/subscribe?lang=ja&elqTrackId=8ff31a50441c461f994d916522111fa1" style="color: #5e5e5e; font-weight: bold;">こちら</a>からお手続きをお願いいたします。<br />
+                                    個人情報の取り扱いについては、<a data-targettype="webpage" href="https://www.rockwellautomation.com/ja-jp/company/about-us/legal-notices/privacy-and-cookiespolicy.html" style="color: #5e5e5e; font-weight: bold;">こちら</a>をご覧ください。<br />
+                                    商標のリストは、<a data-targettype="webpage" href="https://www.rockwellautomation.com/ja-jp/company/about-us/legal-notices/trademarks.html" style="color: #5e5e5e; font-weight: bold;">こちら</a>をご覧ください。 ロックウェル・オートメーションに帰属しない商標は、各企業に帰属します。</p>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="popup_main">
+                    <button class="open_popup" style="width: 110px;">TEXT Footer</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly>
+                            ----------------------------------------------------------------------------------------------------------------------------------------------
+
+                            ロックウェルオートメーションジャパン株式会社
+                            〒104-0033東京都中央区新川1-3-17新川三幸ビルTEL: 03-3206-2784
+                            Copyright©2024 Rockwell Automation, Inc. All rights reserved.
+
+                            ロックウェル・オートメーションについては、こちらをご覧ください。
+                            https://www.rockwellautomation.com/ja-jp.html
+
+                            本メールは、弊社担当者と名刺交換をさせていただいた皆様、
+                            弊社のイベントにお申込・ご参加頂いた皆様、メール配信をご希望いただいた皆様にお届けしています。
+                            今後の配信をご希望されない場合、または登録内容の変更を希望される場合は、こちらからお手続きをお願いいたします。 
+                            https://map.rockwellautomation.com/subscribe?lang=ja
+
+                            個人情報の取り扱いについては、こちらをご覧ください。
+                            https://www.rockwellautomation.com/ja-jp/company/about-us/legal-notices/privacy-and-cookiespolicy.html
+
+                            商標のリストは、こちらをご覧ください。 ロックウェル・オートメーションに帰属しない商標は、各企業に帰属します。
+                            https://www.rockwellautomation.com/ja-jp/company/about-us/legal-notices/trademarks.html
+                          </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">JP</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+<table align="center" bgcolor="#fff" border="0" cellpadding="5" cellspacing="0">
+  <tbody>
+    <tr>
+      <th id="footeh"
+        style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;"
+        bgcolor="#fff">
+        <p>ロックウェルオートメーションジャパン株式会社<br />
+          〒104-0033東京都中央区新川1-3-17新川三幸ビルTEL:
+          03-3206-2784<br />
+          Copyright©2024 Rockwell Automation,
+          Inc. All rights reserved.</p>
+        <p>ロックウェル・オートメーションについては、<b><a data-targettype="webpage"
+              href="https://www.rockwellautomation.com/ja-jp.html?elqTrack=false"
+              style="color: #5e5e5e;font-weight: bold;"
+              title="こちら">こちら</a></b>をご覧ください。<br />
+          本メールは、弊社担当者と名刺交換をさせていただいた皆様、<br />
+          弊社のイベントにお申込・ご参加頂いた皆様、メール配信をご希望いただいた皆様にお届けしています。 <br>
+          個人情報の取り扱いについては、<a data-targettype="webpage"
+            href="https://www.rockwellautomation.com/ja-jp/company/about-us/legal-notices/privacy-and-cookiespolicy.html?elqTrack=false"
+            style="color: #5e5e5e; font-weight: bold;">こちら</a>をご覧ください。<br>
+          商標のリストは、<a data-targettype="webpage"
+            href="https://www.rockwellautomation.com/ja-jp/company/about-us/legal-notices/trademarks.html?elqTrack=false"
+            style="color: #5e5e5e; font-weight: bold;">こちら</a>をご覧ください。
+          ロックウェル・オートメーションに帰属しない商標は、各企業に帰属します。</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+                            </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="content">ja-jp</td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+              </tr>
+
+
+            </tbody>
+          </table>
+
+
+
+          <table>
+            <thead>
+              <tr>
+                <th><b>Region</b></th>
+                <th>EN</th>
+                <th>SEA</th>
+                <th>SP</th>
+                <th>AU</th>
+                <th>NZ</th>
+                <th>IN</th>
+                <th>KR</th>
+                <th>TW</th>
+                <th>CN</th>
+                <th>JP</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th><b>Email Header</b></th>
+                <td class="content">AP_EN_Responsive</td>
+                <td class="content">AP_EN_Responsive</td>
+                <td class="content">AP_EN_Responsive</td>
+                <td class="content">AP_EN_Responsive</td>
+                <td class="content">AP_EN_Responsive</td>
+                <td class="content">AP_EN_Responsive</td>
+                <td class="content">KR Responsive</td>
+                <td class="content">TW Responsive</td>
+                <td class="content">AP - CN - 2021</td>
+                <td>
+                  <span class="content">AP - Blank Header</span>
+                  <div class="popup_main">
+                    <button class="open_popup">HTML</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly>
+              <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody>
+                  <tr>
+                    <th align="center" style="font-family:MS PGothic; font-size:11px; padding-bottom:10px; color:#6d6e71">メールの表示に問題がある場合は、<a href="https://app.response.rockwellautomation.com/e/es.aspx?s=~~eloqua..type--emailfield..syntax--siteid..innerText--siteid..encodeFor--url~~&e=~~eloqua..type--emailfield..syntax--elqemailsaveguid..innerText--elqemailsaveguid..encodeFor--url~~&elqTrackId=b57d96689eaf48969bae47a6eb748d3c" style="text-decoration:none;font-family:Gulim; font-size:11px;" target="_blank">こちら</a>をクリックして Web ブラウザで表示してください。</th>
+                  </tr>
+                </tbody>
+              </table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <th><b>Email Footer</b></th>
+                <td class="content">AP - SEA - Responsive</td>
+                <td class="content">AP - SEA - Responsive</td>
+                <td class="content">AP - AU - Responsive</td>
+                <td class="content">AP - AU - Responsive</td>
+                <td class="content">AP - NZ - Responsive</td>
+                <td class="content">AP - IN - Responsive</td>
+                <td class="content">AP - KR - Responsive</td>
+                <td class="content">AP - TW - Responsive - Updated Jul 2019</td>
+                <td class="content">AP - CN - Responsive</td>
+                <td>
+                  <span class="content">AP - Blank Footer</span>
+                  <div class="popup_main">
+                    <button class="open_popup">HTML</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly>
+                <table align="center" bgcolor="#D4D6D7" border="0" cellpadding="5" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <th id="footer" style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;" bgcolor="#D4D6D7h>
+                      <p>ロックウェルオートメーションジャパン株式会社<br />
+                      〒104-0033東京都中央区新川1-3-17新川三幸ビルTEL: 03-3206-2784<br />
+                      Copyright&copy;2024 Rockwell Automation, Inc. All rights reserved.</p>
+                
+                      <p>ロックウェル・オートメーションについては、<b><a data-targettype="webpage" href="https://www.rockwellautomation.com/ja_JP/overview.page?elqTrackId=22f6e3340803479492bd9c44fd8dae99" style="color: #5e5e5e;
+                                    font-weight: bold;" title="こちら">こちら</a></b>をご覧ください。<br />
+                      本メールは、弊社担当者と名刺交換をさせていただいた皆様、<br />
+                      弊社のイベントにお申込・ご参加頂いた皆様、メール配信をご希望いただいた皆様にお届けしています。<br />
+                      今後の配信をご希望されない場合、または登録内容の変更を希望される場合は、<a data-targettype="webpage" href="https://map.rockwellautomation.com/subscribe?lang=ja&elqTrackId=8ff31a50441c461f994d916522111fa1" style="color: #5e5e5e; font-weight: bold;">こちら</a>からお手続きをお願いいたします。<br />
+                      個人情報の取り扱いについては、<a data-targettype="webpage" href="https://www.rockwellautomation.com/ja-jp/company/about-us/legal-notices/privacy-and-cookiespolicy.html" style="color: #5e5e5e; font-weight: bold;">こちら</a>をご覧ください。<br />
+                      商標のリストは、<a data-targettype="webpage" href="https://www.rockwellautomation.com/ja-jp/company/about-us/legal-notices/trademarks.html" style="color: #5e5e5e; font-weight: bold;">こちら</a>をご覧ください。 ロックウェル・オートメーションに帰属しない商標は、各企業に帰属します。</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                            </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="popup_main">
+                    <button class="open_popup" style="width: 110px;">TEXT Footer</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly>
+              ----------------------------------------------------------------------------------------------------------------------------------------------
+              
+              ロックウェルオートメーションジャパン株式会社
+              〒104-0033東京都中央区新川1-3-17新川三幸ビルTEL: 03-3206-2784
+              Copyright©2024 Rockwell Automation, Inc. All rights reserved.
+              
+              ロックウェル・オートメーションについては、こちらをご覧ください。
+              https://www.rockwellautomation.com/ja-jp.html
+              
+              本メールは、弊社担当者と名刺交換をさせていただいた皆様、
+              弊社のイベントにお申込・ご参加頂いた皆様、メール配信をご希望いただいた皆様にお届けしています。
+              今後の配信をご希望されない場合、または登録内容の変更を希望される場合は、こちらからお手続きをお願いいたします。 
+              https://map.rockwellautomation.com/subscribe?lang=ja
+              
+              個人情報の取り扱いについては、こちらをご覧ください。
+              https://www.rockwellautomation.com/ja-jp/company/about-us/legal-notices/privacy-and-cookiespolicy.html
+              
+              商標のリストは、こちらをご覧ください。 ロックウェル・オートメーションに帰属しない商標は、各企業に帰属します。
+              https://www.rockwellautomation.com/ja-jp/company/about-us/legal-notices/trademarks.html
+                              </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <th><b>OFT Footer</b></th>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">EN</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+              <table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
+                <tbody>
+                    <tr>
+                       <td id="footeh"
+                            style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;">
+                            <p>Copyright &copy; 2024&nbsp;Rockwell Automation, Inc. All rights reserved.<br />
+                                To view a complete list of Rockwell Automation trademarks please <b><a data-targettype="webpage"
+                                        href="https://www.rockwellautomation.com/en-id/company/about-us/legal-notices/trademarks.HTML?elqTrack=false"
+                                        style="color: #5e5e5e;
+                                font-weight: bold;" title="Trademarks">click here</a></b>.<br />
+                                Trademarks not belonging to Rockwell Automation are property of their respective companies.<br />
+                                <br />
+                                Rockwell Automation Southeast Asia Pte Ltd,<br />
+                                No 2 Corporation Road, #04-05/06 Corporation Place, Singapore 618494.<br />
+                                Tel: (65) 6510 6688, Fax: (65) 6510 6699
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">SEA</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+              <table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
+                <tbody>
+                    <tr>
+                       <td id="footeh"
+                            style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;">
+                            <p>Copyright &copy; 2024&nbsp;Rockwell Automation, Inc. All rights reserved.<br />
+                                To view a complete list of Rockwell Automation trademarks please <b><a data-targettype="webpage"
+                                        href="https://www.rockwellautomation.com/en-id/company/about-us/legal-notices/trademarks.HTML?elqTrack=false"
+                                        style="color: #5e5e5e;
+                                font-weight: bold;" title="Trademarks">click here</a></b>.<br />
+                                Trademarks not belonging to Rockwell Automation are property of their respective companies.<br />
+                                <br />
+                                Rockwell Automation Southeast Asia Pte Ltd,<br />
+                                No 2 Corporation Road, #04-05/06 Corporation Place, Singapore 618494.<br />
+                                Tel: (65) 6510 6688, Fax: (65) 6510 6699
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">SP</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+              <table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
+                <tbody>
+                    <tr>
+                       <td id="footeh"
+                            style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;">
+                            Copyright &copy; 2024&nbsp;Rockwell Automation, Inc. All rights reserved.<br />
+                            To view a complete list of Rockwell Automation trademarks please <b><a data-targettype="webpage"
+                                    href="https://www.rockwellautomation.com/en-au/company/about-us/legal-notices/trademarks.html?elqTrack=false"
+                                    style="color: #5e5e5e;
+                                font-weight: bold;" title="Trademarks">click here</a></b>.<br />
+                            Trademarks not belonging to Rockwell Automation are property of their respective companies.<br />
+                            <br />
+                            Rockwell Automation Australia Ltd,<br />
+                            248 Burwood Road, Hawthorn Victoria 3122, Australia<br />
+                            Tel: +61 3 9757 1111
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">AU</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+              <table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
+                <tbody>
+                    <tr>
+                       <td id="footeh"
+                            style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;">
+                            Copyright &copy; 2024&nbsp;Rockwell Automation, Inc. All rights reserved.<br />
+                            To view a complete list of Rockwell Automation trademarks please <b><a data-targettype="webpage"
+                                    href="https://www.rockwellautomation.com/en-au/company/about-us/legal-notices/trademarks.html?elqTrack=false"
+                                    style="color: #5e5e5e;
+                                font-weight: bold;" title="Trademarks">click here</a></b>.<br />
+                            Trademarks not belonging to Rockwell Automation are property of their respective companies.<br />
+                            <br />
+                            Rockwell Automation Australia Ltd,<br />
+                            248 Burwood Road, Hawthorn Victoria 3122, Australia<br />
+                            Tel: +61 3 9757 1111
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">NZ</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+              <table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
+                <tbody>
+                    <tr>
+                       <td id="footeh"
+                            style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;">
+                            Copyright &copy; 2024&nbsp;Rockwell Automation, Inc. All rights reserved.<br />
+                            To view a complete list of Rockwell Automation trademarks please <b><a data-targettype="webpage"
+                                    href="https://www.rockwellautomation.com/en-nz/company/about-us/legal-notices/trademarks.HTML?elqTrack=false"
+                                    style="color: #5e5e5e;
+                                font-weight: bold;" title="Trademarks">click here</a></b>.<br />
+                            Trademarks not belonging to Rockwell Automation are property of their respective companies.<br />
+                            <br />
+                            Rockwell Automation (N.Z.) Ltd,<br />
+                            2B Pacific Rise, Mt Wellington, Auckland, New Zealand<br />
+                            Tel: +64 9 276 3070 Fax: +64 9 276 5406
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">IN</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+              <table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
+                <tbody>
+                    <tr>
+                       <td id="footeh"
+                            style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 16px; color: #5e5e5e; text-align: left;">
+                            Copyright &copy; 2024 Rockwell Automation, Inc. All rights reserved.<br />
+                            To view a complete list of Rockwell Automation trademarks please <b><a data-targettype="webpage"
+                                    href="https://www.rockwellautomation.com/global/legal-notices/overview.page?elqTrack=false"
+                                    style="color: #5e5e5e;
+                                font-weight: bold;" title="Trademarks">click here</a></b><br />
+                            Trademarks not belonging to Rockwell Automation are property of their respective companies.<br />
+                            Rockwell Automation India Pvt. Ltd, A-66, Sector-64, Noida 201301, Uttar Pradesh, India.<br />
+                            Tel +91 120 467 1694, 95 Fax +91 120 421 7929, 31</td>
+                    </tr>
+                </tbody>
+              </table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">KR</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+              <table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                       <td width="16">&nbsp;</th>
+                        <td
+                            style="font-size: 10px; font:Gulim; line-height: 12px; color: #5e5e5e; text-align: left; ; padding-top:10px; font-family:Malgun Gothic ">
+                            <font face="Arial">Copyright&copy; 2024 Rockwell Automation, Inc. All rights
+                                reserved.</font><br />
+                            <br />
+                            명시된 제품과 솔루션의 명칭은 <font face="Arial">Rockwell Automation, Inc.</font> 의 상표
+                            자산입니다.<br />
+                            그 외의 모든 상표 및 등록 상표는 각 해당 기업의 자산입니다.<br />
+                            <br />
+                            캠페인에 대한 문의 및 개선사항은 <a href="mailto:korea_marketing@rockwellautomation.com">
+                                <font face="Arial">RA Korea Marketing</font>
+                            </a> 으로 부탁드립니다<br />
+                            <br />
+                            로크웰 오토메이션 코리아(주), 서울특별시 강남구 논현로 <font face="Arial">430</font> (역삼동, 아세아타워)
+                            <font face="Arial">6,7F</font> (우편번호: <font face="Arial">06223</font>)<br />
+                            &nbsp;
+                        </td>
+                        <td width="16">&nbsp;</td>
+                    </tr>
+                </tbody>
+              </table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">TW</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+              <table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
+                <tbody>
+                    <tr>
+                       <td id="footeh"
+                            style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;">
+                            <p>Copyright &copy; 2024&nbsp;Rockwell Automation, Inc. All rights reserved.<br />
+                                請<b><a data-targettype="webpage"
+                                        href="https://www.rockwellautomation.com/global/legal-notices/overview.page?elqTrack=false"
+                                        style="color: #5e5e5e;
+                                font-weight: bold;" title="Trademarks">按此</a></b>瀏覽完整洛克威爾自動化公司之註冊商標。<br />
+                                凡不屬於洛克威爾自動化之商標均為其所屬公司所有。<br />
+                                <br />
+                                台灣洛克威爾國際股份有限公司 Rockwell Automation Taiwan Co., Ltd.<br />
+                                台北市104建國北路二段120號14樓<br />
+                                Tel: +886-2-6618-8288<br />
+                                &nbsp;
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">CN</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+              <table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
+                <tbody>
+                    <tr>
+                       <td id="footeh"
+                            style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;">
+                            <p>版权所有&copy;2024罗克韦尔自动化（中国）有限公司。保留所有权利<br />
+                                要查看罗克韦尔自动化（中国）公司的商标的完整列表，请点击<b><a data-targettype="webpage"
+                                        href="https://www.rockwellautomation.com/zh-cn/company/about-us/legal-notices/trademarks.html?elqTrack=false"
+                                        style="color: #5e5e5e;
+                                                                                                        font-weight: bold;"
+                                        title="Trademarks">这里</a></b><br />
+                                不属于罗克韦尔自动化的商标是其各自公司的财产。<br />
+                                <br />
+                                上海市漕河泾开发区虹梅路1801号B区宏业大厦1楼，6-9楼，邮编200233
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+                        </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="popup_main">
+                    <button class="open_popup">JP</button>
+                    <div class="popup_body">
+                      <div class="popup_back"></div>
+                      <div class="popup_contain">
+                        <div class="popup_close">x</div>
+                        <textarea name="" id="" readonly cols="30" rows="1">
+              <table align="center" bgcolor="#fff" border="0" cellpadding="5" cellspacing="0">
+                <tbody>
+                  <tr>
+                    <th id="footeh"
+                      style="font-family: Arial,Helvetica,sans-serif; font-size: 10px; line-height: 12px; color: #5e5e5e; text-align: left;"
+                      bgcolor="#fff">
+                      <p>ロックウェルオートメーションジャパン株式会社<br />
+                        〒104-0033東京都中央区新川1-3-17新川三幸ビルTEL:
+                        03-3206-2784<br />
+                        Copyright©2024 Rockwell Automation,
+                        Inc. All rights reserved.</p>
+                      <p>ロックウェル・オートメーションについては、<b><a data-targettype="webpage"
+                            href="https://www.rockwellautomation.com/ja-jp.html?elqTrack=false"
+                            style="color: #5e5e5e;font-weight: bold;"
+                            title="こちら">こちら</a></b>をご覧ください。<br />
+                        本メールは、弊社担当者と名刺交換をさせていただいた皆様、<br />
+                        弊社のイベントにお申込・ご参加頂いた皆様、メール配信をご希望いただいた皆様にお届けしています。 <br>
+                        個人情報の取り扱いについては、<a data-targettype="webpage"
+                          href="https://www.rockwellautomation.com/ja-jp/company/about-us/legal-notices/privacy-and-cookiespolicy.html?elqTrack=false"
+                          style="color: #5e5e5e; font-weight: bold;">こちら</a>をご覧ください。<br>
+                        商標のリストは、<a data-targettype="webpage"
+                          href="https://www.rockwellautomation.com/ja-jp/company/about-us/legal-notices/trademarks.html?elqTrack=false"
+                          style="color: #5e5e5e; font-weight: bold;">こちら</a>をご覧ください。
+                        ロックウェル・オートメーションに帰属しない商標は、各企業に帰属します。</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+                            </textarea>
+                        <button type="button" class="btn-hide"></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <th><b>Link</b></th>
+                <td class="content">en-us</td>
+                <td class="content">en-sg</td>
+                <td class="content">en-au</td>
+                <td class="content">en-au</td>
+                <td class="content">en-nz</td>
+                <td class="content">en-in</td>
+                <td class="content">ko-kr</td>
+                <td class="content">zh-tw</td>
+                <td><span class="content">.com.cn</span>/<span class="content">zh-cn</span></td>
+                <td class="content">ja-jp</td>
+              </tr>
+
+              <tr>
+                <th><b>From Name</b></th>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">로크웰오토메이션코리아</td>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">罗克韦尔自动化</td>
+                <td class="content">ロックウェル・オートメーション</td>
+              </tr>
+
+              <tr>
+                <th><b>From Address</b></th>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">seamarcom@rockwellautomation.com</td>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">raindiamarketing@rockwellautomation.com</td>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">ContactJP@rockwellautomation.com</td>
+              </tr>
+
+              <tr>
+                <th><b>Reply Name</b></th>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">로크웰오토메이션코리아</td>
+                <td class="content">Rockwell Automation</td>
+                <td class="content">罗克韦尔自动化</td>
+                <td class="content">ロックウェル・オートメーション</td>
+              </tr>
+
+              <tr>
+                <th><b>Reply Address</b></th>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">raindiamarketing@rockwellautomation.com</td>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">dtc@rockwellautomation.com</td>
+                <td class="content">ContactJP@rockwellautomation.com</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </section>
+
+        <section class="st-panel" id="st-panel-2">
+          <table>
+            <thead>
+              <tr>
+                <th><b>Region</b></th>
+                <th>EN</th>
+                <th>SEA</th>
+                <th>SP</th>
+                <th>AU</th>
+                <th>NZ</th>
+                <th>IN</th>
+                <th>KR</th>
+                <th>TW</th>
+                <th>CN</th>
+                <th>JP</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <th><b>Seed List</b></th>
+                <td class="content">AP_SEA_Seedlist_2022_10</td>
+                <td class="content">AP_SEA_Seedlist_2022_10</td>
+                <td class="content">AP_ANZ_Seedlist_2022_10</td>
+                <td class="content">AP_ANZ_Seedlist_2022_10</td>
+                <td class="content">AP_ANZ_Seedlist_2022_10</td>
+                <td class="content">AP_IN_Seedlist_2022_10</td>
+                <td class="content">AP_KR_Seedlist_2022_10</td>
+                <td class="content">AP_TW_Seedlist_2022_10</td>
+                <td class="content">AP_CN_Seedlist_2022_10</td>
+                <td class="content">AP_JP_Seedlist_2022_10</td>
+              </tr>
+
+              <tr>
+                <th><b>Time Zone</b></th>
+                <td class="content">(UTC+08:00) Kuala Lumpur, Singapore</td>
+                <td class="content">(UTC+08:00) Kuala Lumpur, Singapore</td>
+                <td class="content">(UTC+10:00) Canberra, Melbourne, Sydney</td>
+                <td class="content">(UTC+10:00) Canberra, Melbourne, Sydney</td>
+                <td class="content">(UTC+12:00) Auckland, Wellington</td>
+                <td class="content">(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi</td>
+                <td class="content">(UTC+09:00) Seoul</td>
+                <td class="content">(UTC+08:00) Taipei</td>
+                <td class="content">(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi</td>
+                <td class="content">(UTC+09:00) Osaka, Sapporo, Tokyo</td>
+              </tr>
+
+              <tr>
+                <th><b>Country</b></th>
+                <td class="content">PH,PK,MY,SG,MM</td>
+                <td class="content">PH,ID,PK,TH,MY,SG,VN,MM</td>
+                <td class="content">AU,NZ</td>
+                <td class="content">Australia</td>
+                <td class="content">New Zealand</td>
+                <td class="content">India</td>
+                <td class="content">South Korea</td>
+                <td class="content">Taiwan, China</td>
+                <td class="content">China</td>
+                <td class="content">Japan</td>
+              </tr>
+
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+
+              <tr>
+                <th><b>Segments Name</b></th>
+                <td class="content">AP_-_Members_2023_10</td>
+                <td class="content">AP_-_Registered_Members_2023_10</td>
+                <td class="content">AP_-_Attended_Members_2023_10</td>
+              </tr>
+
+              <tr>
+                <th><b></b></th>
+
+                <td>
+                  <a href="https://cgaywfwpexqmkesgvg7zpw.on.drv.tw/RW/img/AP_%20_Registered_Members_2023_10.png"
+                    data-fancybox href="javascript:;">
+                    <img class="img-icon"
+                      src="https://img.freepik.com/premium-vector/gallery-icon-picture-landscape-vector-sign-symbol_660702-224.jpg" />
+                  </a>
+                </td>
+
+                <td>
+                  <a href="https://cgaywfwpexqmkesgvg7zpw.on.drv.tw/RW/img/AP_%20_Registered_Members_2023_10.png"
+                    data-fancybox href="javascript:;">
+                    <img class="img-icon"
+                      src="https://img.freepik.com/premium-vector/gallery-icon-picture-landscape-vector-sign-symbol_660702-224.jpg" />
+                  </a>
+                </td>
+
+                <td>
+                  <a href="https://cgaywfwpexqmkesgvg7zpw.on.drv.tw/RW/img/AP_%20_Registered_Members_2023_10.png"
+                    data-fancybox href="javascript:;">
+                    <img class="img-icon"
+                      src="https://img.freepik.com/premium-vector/gallery-icon-picture-landscape-vector-sign-symbol_660702-224.jpg" />
+                  </a>
+                </td>
+
+              </tr>
+
+            </tbody>
+          </table>
+        </section>
+
+        <section class="st-panel" id="st-panel-3">
+          <table>
+            <tbody>
+
+              <tr>
+                <th><b>Webinars Name</b></th>
+                <td class="content">AP_WB_-_Invite_2023_10</td>
+                <td class="content">AP_WB_-_ReInvite_2023_10</td>
+                <td class="content">AP_WB_-_LastChanceInvite_2023_10</td>
+                <td class="content">AP_WB_-_D7_Reminder_2023_10</td>
+                <td class="content">AP_WB_-_D1_Reminder_2023_10</td>
+                <td class="content">AP_WB_-_15min_Reminder_2023_10</td>
+                <td class="content">AP_WB_-_1Hr_Reminder_2023_10</td>
+                <td class="content">AP_WB_-_Confirmation_2023_10</td>
+                <td class="content">AP_WB_-_OnDemand_Confirmation_2023_10</td>
+                <td class="content">AP_WB_-_ThankYou_2023_10</td>
+                <td class="content">AP_WB_-_Sorry_2023_10</td>
+              </tr>
+
+              <tr>
+                <th><b>Email Group</b></th>
+                <td class="content">Events</td>
+                <td class="content">Events</td>
+                <td class="content">Events</td>
+                <td class="content">Webinars Registered</td>
+                <td class="content">Webinars Registered</td>
+                <td class="content">Webinars Registered</td>
+                <td class="content">Webinars Registered</td>
+                <td class="content">Webinars Registered</td>
+                <td class="content">Webinars Registered</td>
+                <td class="content">Webinars Registered</td>
+                <td class="content">Webinars Registered</td>
+              </tr>
+
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+
+              <tr>
+                <th><b>Events Name</b></th>
+                <td class="content">AP_EV_-_Invite_2023_10</td>
+                <td class="content">AP_EV_-_ReInvite_2023_10</td>
+                <td class="content">AP_EV_-_LastChanceInvite_2023_10</td>
+                <td class="content">AP_EV_-_ThankYou_2023_10</td>
+                <td class="content">AP_EV_-_Sorry_2023_10</td>
+                <th><b>Other Name</b></th>
+                <td class="content">AP_-_Campaign_2023_10</td>
+                <td class="content">AP_GM_-_2023_10</td>
+                <td class="content">AP_NU_-_2023_10</td>
+                <td class="content">AP_NL_-_eNews_2023_10</td>
+                <td class="content">AP_NL_-_Automation_Today_-_2023_10</td>
+              </tr>
+
+              <tr>
+                <th><b>Email Group</b></th>
+                <td class="content">Events</td>
+                <td class="content">Events</td>
+                <td class="content">Events</td>
+                <td class="content">Events Registered</td>
+                <td class="content">Events Registered</td>
+                <th><b>Email Group</b></th>
+                <td class="content">General Mailings</td>
+                <td class="content">General Mailings</td>
+                <td class="content">! Product Solutions and Services</td>
+                <td class="content">AP eNews</td>
+                <td class="content">AP Automation Today</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </section>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div id="copied-success" class="copied">
+    Copied
+  </div>
+
+</body>
+<script>
+  $(".open_popup").click(function () {
+    $(this)
+      .parent(".popup_main")
+      .children(".popup_body")
+      .addClass("popup_body_show");
+  });
+  $(".popup_close").click(function () {
+    $(".popup_body").removeClass("popup_body_show");
+  });
+  $(".popup_back").click(function () {
+    $(".popup_body").removeClass("popup_body_show");
+  });
+
+
+
+  document.querySelectorAll(".content").forEach((item, index) => {
+    item.addEventListener("click", async (event) => {
+      if (!navigator.clipboard) {
+        // Clipboard API not available
+        return;
+      }
+      try {
+        let copySuccess = document.getElementById("copied-success");
+        copySuccess.style.opacity = "1";
+        setTimeout(function () { copySuccess.style.opacity = "0" }, 500);
+
+        await navigator.clipboard.writeText(event.target.innerText);
+
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copied"
+
+      } catch (err) {
+        console.error("Failed to copy!", err);
+      }
+    });
+  });
+
+  $(document).ready(function () {
+    $("button").click(function () {
+      $("textarea").select();
+      document.execCommand('copy');
+    });
+
+  });
+
+</script>
+
+</html>
