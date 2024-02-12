@@ -1,0 +1,384 @@
+* {
+  outline: none;
+}
+
+::selection {
+  background: #00000011;
+}
+
+rgba(0, 0, 0, 0.057)
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.content {
+  cursor: pointer;
+}
+
+.content:hover {
+  background-color: #44444444;
+}
+
+.btn-hide {
+  display: none;
+}
+
+.copied {
+  opacity: 0;
+  position: fixed;
+  color: #fff;
+  padding: 5px 20px 12px 27px;
+  background-color: #444444aa;
+  transition: .6s opacity;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  top: 0;
+  right: 0;
+  border-radius: 0 0 0 10px;
+}
+
+.popup_main {
+  display: contents;
+}
+
+.open_popup {
+  background: tomato;
+  border: none;
+  padding: 5px 15px;
+  color: #fff;
+  cursor: pointer;
+  width: 85px;
+}
+
+.popup_body {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -o-transition: 300ms;
+  -ms-transition: 300ms;
+  transition: 300ms;
+}
+
+.popup_body_show {
+  display: block;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -o-transition: 300ms;
+  -ms-transition: 300ms;
+  transition: 300ms;
+}
+
+.popup_back {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.popup_contain {
+  position: relative;
+  background: #fff;
+  width: fit-content;
+  min-width: auto;
+  margin: 100px auto 50px;
+  min-height: 150px;
+  padding: 10px;
+}
+
+.popup_close {
+  background: red;
+  padding: 3px 10px 5px;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+textarea {
+  width: 80vw;
+  height: 50vh;
+  border: none;
+}
+
+table {
+  /* border: 1px solid #ddd; */
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 10px;
+  max-width: 100%;
+  width: 100%;
+  padding: 10px;
+}
+
+table>thead>tr>th,
+table>thead>tr>td,
+table>tbody>tr>th,
+table>tbody>tr>td,
+table>tfoot>tr>th,
+table>tfoot>tr>td {
+  border: 1px solid #ddd;
+  line-height: 20px;
+  padding: 10px 10px 0 10px;
+  min-height: 33px;
+}
+
+th {
+  background: #444;
+  color: #fff;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+table th {
+  text-align: left;
+}
+
+table,
+table th,
+table td,
+table tr,
+table tr th,
+table tr td,
+table thead,
+table thead th,
+table thead td,
+table thead tr,
+table thead tr th,
+table thead tr td,
+table tbody,
+table tbody th,
+table tbody td,
+table tbody tr,
+table tbody tr th,
+table tbody tr td,
+table tfoot,
+table tfoot th,
+table tfoot td,
+table tfoot tr,
+table tfoot tr th,
+table tfoot tr td {
+  display: block;
+}
+
+table>thead {
+  float: left;
+}
+
+table>tbody>tr {
+  display: inline-block;
+  vertical-align: top;
+}
+
+table>tbody {
+  width: auto;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+body {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #333;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #555;
+  text-decoration: none;
+}
+
+li {
+  padding: 5px 0;
+}
+
+.img-icon {
+  width: 25px;
+}
+
+.st-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  font-family: 'Josefin Slab', 'Myriad Pro', Arial, sans-serif;
+}
+
+.st-container>input,
+.st-container>a {
+  position: fixed;
+  bottom: 0px;
+  width: 33.33%;
+  cursor: pointer;
+  font-size: 16px;
+  height: 34px;
+  line-height: 34px;
+}
+
+.st-container>input {
+  opacity: 0;
+  z-index: 1000;
+}
+
+.st-container>a {
+  z-index: 10;
+  font-weight: 700;
+  background: #3e3e3e;
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(151, 24, 64, 0.2);
+}
+
+.st-container:before {
+  content: '';
+  position: fixed;
+  width: 100%;
+  height: 34px;
+  background: #3e3e3e;
+  z-index: 9;
+  bottom: 0;
+}
+
+#st-control-1,
+#st-control-1+a {
+  left: 0;
+}
+
+#st-control-2,
+#st-control-2+a {
+  left: 33.33%;
+}
+
+#st-control-3,
+#st-control-3+a {
+  left: 66.66%;
+}
+
+/* #st-control-4,
+    #st-control-4+a {
+      left: 75%;
+    } */
+
+.st-container>input:checked+a,
+.st-container>input:checked:hover+a {
+  background: #151515;
+}
+
+.st-container>input:checked+a:after,
+.st-container>input:checked:hover+a:after {
+  bottom: 100%;
+  border: solid transparent;
+  content: '';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color: #151515;
+  border-width: 20px;
+  left: 50%;
+  margin-left: -20px;
+}
+
+.st-container>input:hover+a {
+  background: #252525;
+}
+
+.st-container>input:hover+a:after {
+  border-bottom-color: #252525;
+}
+
+.st-scroll,
+.st-panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.st-scroll {
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.6s ease-in-out;
+  -moz-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+  -ms-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+
+  /* Let's enforce some hardware acceleration */
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+}
+
+.st-panel {
+  background: #fff;
+  overflow-x: hidden;
+}
+
+#st-control-1:checked~.st-scroll {
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+}
+
+#st-control-2:checked~.st-scroll {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+#st-control-3:checked~.st-scroll {
+  -webkit-transform: translateY(-200%);
+  -moz-transform: translateY(-200%);
+  -o-transform: translateY(-200%);
+  -ms-transform: translateY(-200%);
+  transform: translateY(-200%);
+}
+
+#st-control-4:checked~.st-scroll {
+  -webkit-transform: translateY(-300%);
+  -moz-transform: translateY(-300%);
+  -o-transform: translateY(-300%);
+  -ms-transform: translateY(-300%);
+  transform: translateY(-300%);
+}
+
+#st-control-5:checked~.st-scroll {
+  -webkit-transform: translateY(-400%);
+  -moz-transform: translateY(-400%);
+  -o-transform: translateY(-400%);
+  -ms-transform: translateY(-400%);
+  transform: translateY(-400%);
+}
