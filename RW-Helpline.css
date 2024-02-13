@@ -8,7 +8,6 @@ body {
   font-size: 15px;
   color: #333;
   -webkit-font-smoothing: antialiased;
-  margin-left: 15px !important;
   margin: 0;
 }
 
@@ -19,24 +18,39 @@ a {
 
 .pages ul {
   position: fixed;
+}
+
+.pages ul li {
+  padding: 4px;
+  list-style: none;
+}
+
+.pages ul li a {
+  position: fixed;
   z-index: 999;
   background: #fff;
   border: 1px solid;
-  left: 0;
-  padding: 0px;
-  top: 0;
+  padding: 3px 6px 6px 6px;
+    font-size: 10px;
+    transition: 0.6s ease-in-out;
   margin-top: 0;
-  height: 100%;
+  border-radius: 0 10px 10px 0;
 }
 
-.pages li {
-  padding: 4px;
-  list-style: none;
+.pages ul li a:hover {
+  left: 0px !important;
+  box-shadow: -3px 3px 3px 3px #0000008c;
+  font-size: 25px;
+}
+
+.pages ul li a span {
+  left: 0;
 }
 
 .img-icon {
   width: 25px;
 }
+
 ::selection {
   background: #00000011;
 }
@@ -223,6 +237,7 @@ table tfoot tr td {
 
 table>thead {
   float: left;
+  margin-left: 10px;
 }
 
 table>tbody>tr {
