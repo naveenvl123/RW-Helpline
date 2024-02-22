@@ -16,6 +16,14 @@ a {
   text-decoration: none;
 }
 
+.update {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 10px;
+  cursor: pointer;
+  z-index: 999;
+}
 .pages ul {
   position: fixed;
 }
