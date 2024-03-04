@@ -8,44 +8,17 @@
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
       integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
       crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="RW-Helpline.css" />
+    <link rel="stylesheet" href="./RW-Helpline.css" />
+    <script src="./component.js"></script>
 
   </head>
 
   <body>
-    <section class="pages">
-      <ul>
-        <li>
-          <a href="#" class="menu-home active">
-            <span>
-              Home
-            </span>
-            🏠
-          </a>
-        </li>
-        <li>
-          <a href="1.html" class="menu-1">
-            <span>
-              Naming
-            </span>
-            📙
-          </a>
-        </li>
-        <li>
-          <a href="2.html" class="menu-2">
-            <span>
-              Reference
-            </span>
-            📝
-          </a>
-        </li>
-      </ul>
-      <div class="update">
-        <a href="Update.html" target="_blank">
-          ☢️
-        </a>
-      </div>
-    </section>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <app-header></app-header>
+</div>
+<span id="hamburgerMenu" onclick="openNav()">&#9776;</span>
 
     <table>
       <thead>
