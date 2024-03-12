@@ -38,6 +38,15 @@ section.body {
   }
 }
 
+form{
+  h4{
+    margin: 0;
+  }
+  h5{
+      padding: 10px;
+      margin: 0;
+  }
+}
 
 .pages {
   ul {
