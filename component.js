@@ -8,8 +8,8 @@ class AppHeader extends HTMLElement {
 <a href="picklist.html"><span>Picklist</span></a>
 <a href="customertype.html"><span>Customer Type</span></a>
 <a href="industry.html"><span>Industry</span></a>
-<a href=".html"><span></span></a>
-<a href=".html"><span></span></a>
+<a href="jobfunction.html"><span>Job Function</span></a>
+<a href="joblevel.html"><span>Job Level</span></a>
 <a href="prank.html" tar>Danger☢️</a>
         `
     }
