@@ -13,12 +13,17 @@
 </head>
 
 <body>
-  <a id="hamburgerMenu" onclick="openNav()">&equiv;</a>
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <app-header></app-header>
-  </div>
-
+    <section class="body">
+    
+      <div class="menu">
+        <a id="hamburgerMenu" onclick="openNav()">&equiv;</a>
+    
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <app-header></app-header>
+        </div>
+      </div>
+      <div class="details">
   <table>
     <thead>
       <tr>
@@ -647,10 +652,9 @@
     </tbody>
     </table>
 
-  <div id="copied-success" class="copied">
-    Copied
-  </div>
+  </section>
 
+  <dan-copied></dan-copied>
 </body>
 <script src="RW-Helpline.js"></script>
 
