@@ -2,10 +2,11 @@
 class AppHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-      <a href="index.html" class="menu-home"><span>Home</span></a>
-      <a href="1.html" class="menu-1"><span>Naming</span></a>
-      <a href="2.html" class="menu-2"><span>OFT</span></a>
-      <a href="prank.html" target="_blank">Danger☢️</a>
+      <a href="index.html"><span>Home</span></a>
+      <a href="naming.html"><span>Naming</span></a>
+      <a href="2.html"><span>OFT</span></a>
+      <a href="picklist.html"><span>Picklist</span></a>
+      <a href="prank.html" tar>Danger☢️</a>
         `
     }
 }

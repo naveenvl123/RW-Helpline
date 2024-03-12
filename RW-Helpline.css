@@ -16,43 +16,60 @@ a {
   text-decoration: none;
 }
 
-.update {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 10px;
-  cursor: pointer;
-  z-index: 999;
-}
-.pages ul {
-  position: fixed;
+section.body {
+  display: inline-flex;
+
+  .menu {
+    width: 30px;
+    height: 100vh;
+    background-color: #111;
+    text-align: center;
+
+    #hamburgerMenu {
+      font-weight: 600;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+  }
+
+  .details {
+    padding: 10px;
+  }
 }
 
-.pages ul li {
-  padding: 4px;
-  list-style: none;
+
+.pages {
+  ul {
+    position: fixed;
+
+    li {
+      padding: 4px;
+      list-style: none;
+
+      a {
+        position: fixed;
+        z-index: 999;
+        background: #fff;
+        color: #444444;
+        border: 1px solid;
+        padding: 20px 6px;
+        font-size: 10px;
+        transition: 0.3s ease-in-out;
+        margin-top: 0;
+        border-radius: 0 10px 10px 0;
+      }
+
+      :hover {
+        left: -1px !important;
+        box-shadow: -3px 3px 3px 3px #0000008c;
+        font-size: 13px;
+      }
+    }
+  }
 }
 
-.pages ul li a {
-  position: fixed;
-  z-index: 999;
-  background: #fff;
-  color: #444444;
-  border: 1px solid;
-  padding: 20px 6px;
-    font-size: 10px;
-    transition: 0.3s ease-in-out;
-  margin-top: 0;
-  border-radius: 0 10px 10px 0;
-}
-
-.pages ul li a:hover {
-  left: -1px !important;
-  box-shadow: -3px 3px 3px 3px #0000008c;
-  font-size: 13px;
-}
-
-.pages ul li a span {
+.pages ul li .pages ul li a .pages ul li a span {
   left: 0;
 }
 
@@ -75,6 +92,7 @@ a {
   left: -55px;
   top: 125px;
 }
+
 .img-icon {
   width: 25px;
 }
@@ -277,6 +295,7 @@ table>tbody {
   white-space: nowrap;
   overflow-x: auto;
 }
+
 /* SideNav */
 .sidenav {
   height: 100%;
@@ -298,6 +317,7 @@ table>tbody {
   color: #818181;
   display: block;
   transition: 0.3s;
+  text-align: left;
 }
 
 .sidenav a:hover {
@@ -307,14 +327,8 @@ table>tbody {
 .sidenav .closebtn {
   position: absolute;
   top: -15px;
-    left: -30px;
+  left: -30px;
   font-size: 36px;
-}
-
-#hamburgerMenu {
-  position: fixed;
-  color: #444444;
-  cursor: pointer;
 }
 
 @media screen and (max-height: 450px) {

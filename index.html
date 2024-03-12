@@ -1,73 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RW Helpline</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-      integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
-      crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./RW-Helpline.css" />
-    <script src="./component.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RW Helpline</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./RW-Helpline.css" />
+  <script src="./component.js"></script>
 
-  </head>
+</head>
 
-  <body>
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <app-header></app-header>
-</div>
-<span id="hamburgerMenu" onclick="openNav()">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M8 6.9834C7.44772 6.9834 7 7.43111 7 7.9834C7 8.53568 7.44772 8.9834 8 8.9834H16C16.5523 8.9834 17 8.53568 17 7.9834C17 7.43111 16.5523 6.9834 16 6.9834H8Z"
-      fill="currentColor" />
-    <path
-      d="M7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8C7.44772 13 7 12.5523 7 12Z"
-      fill="currentColor" />
-    <path
-      d="M8 15.017C7.44772 15.017 7 15.4647 7 16.017C7 16.5693 7.44772 17.017 8 17.017H16C16.5523 17.017 17 16.5693 17 16.017C17 15.4647 16.5523 15.017 16 15.017H8Z"
-      fill="currentColor" />
-    <path fill-rule="evenodd" clip-rule="evenodd"
-      d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z"
-      fill="currentColor" />
-  </svg>
-</span>
+<body>
+  <a id="hamburgerMenu" onclick="openNav()">&equiv;</a>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <app-header></app-header>
+  </div>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Region</th>
-          <th>Email Header</th>
-          <th>Email Footer</th>
-          <th>OFT Footer</th>
-          <th>Link</th>
-          <th>From Name</th>
-          <th>From Address</th>
-          <th>Reply Name</th>
-          <th>Reply Address</th>
-          <th>Seed List</th>
-          <th>Time Zone</th>
-          <th>Country</th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th><b>EN</b></th>
-          <td class="content">AP_EN_Responsive</td>
-          <td class="content">AP - SEA - Responsive</td>
-          <td>
-            <div class="popup_main">
-              <button class="open_popup">EN</button>
-              <div class="popup_body">
-                <div class="popup_back"></div>
-                <div class="popup_contain">
-                  <div class="popup_close">x</div>
-                  <textarea name id readonly cols="30" rows="1">
+  <table>
+    <thead>
+      <tr>
+        <th>Region</th>
+        <th>Email Header</th>
+        <th>Email Footer</th>
+        <th>OFT Footer</th>
+        <th>Link</th>
+        <th>From Name</th>
+        <th>From Address</th>
+        <th>Reply Name</th>
+        <th>Reply Address</th>
+        <th>Seed List</th>
+        <th>Time Zone</th>
+        <th>Country</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th><b>EN</b></th>
+        <td class="content">AP_EN_Responsive</td>
+        <td class="content">AP - SEA - Responsive</td>
+        <td>
+          <div class="popup_main">
+            <button class="open_popup">EN</button>
+            <div class="popup_body">
+              <div class="popup_back"></div>
+              <div class="popup_contain">
+                <div class="popup_close">x</div>
+                <textarea name id readonly cols="30" rows="1">
 <table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
   <tbody>
       <tr>
@@ -89,7 +73,7 @@
   </tbody>
 </table>
                         </textarea>
-                  <button type="button" class="btn-hide"></button>
+                <button type="button" class="btn-hide"></button>
                 </div>
                 </div>
                 </div>
@@ -107,18 +91,18 @@
                 <td class="content"></td>
                 </tr>
 
-        <tr>
-          <th><b>SEA</b></th>
-          <td class="content">AP_EN_Responsive</td>
-          <td class="content">AP - SEA - Responsive</td>
-          <td>
-            <div class="popup_main">
-              <button class="open_popup">SEA</button>
-              <div class="popup_body">
-                <div class="popup_back"></div>
-                <div class="popup_contain">
-                  <div class="popup_close">x</div>
-                  <textarea name id readonly cols="30" rows="1">
+      <tr>
+        <th><b>SEA</b></th>
+        <td class="content">AP_EN_Responsive</td>
+        <td class="content">AP - SEA - Responsive</td>
+        <td>
+          <div class="popup_main">
+            <button class="open_popup">SEA</button>
+            <div class="popup_body">
+              <div class="popup_back"></div>
+              <div class="popup_contain">
+                <div class="popup_close">x</div>
+                <textarea name id readonly cols="30" rows="1">
 <table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
   <tbody>
       <tr>
@@ -140,7 +124,7 @@
   </tbody>
 </table>
                         </textarea>
-                  <button type="button" class="btn-hide"></button>
+                <button type="button" class="btn-hide"></button>
                 </div>
                 </div>
                 </div>
@@ -158,18 +142,18 @@
                 <td class="content"></td>
                 </tr>
 
-        <tr>
-          <th><b>SP</b></th>
-          <td class="content">AP_EN_Responsive</td>
-          <td class="content">AP - AU - Responsive</td>
-          <td>
-            <div class="popup_main">
-              <button class="open_popup">SP</button>
-              <div class="popup_body">
-                <div class="popup_back"></div>
-                <div class="popup_contain">
-                  <div class="popup_close">x</div>
-                  <textarea name id readonly cols="30" rows="1">
+      <tr>
+        <th><b>SP</b></th>
+        <td class="content">AP_EN_Responsive</td>
+        <td class="content">AP - AU - Responsive</td>
+        <td>
+          <div class="popup_main">
+            <button class="open_popup">SP</button>
+            <div class="popup_body">
+              <div class="popup_back"></div>
+              <div class="popup_contain">
+                <div class="popup_close">x</div>
+                <textarea name id readonly cols="30" rows="1">
 <table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
   <tbody>
       <tr>
@@ -190,7 +174,7 @@
   </tbody>
 </table>
                         </textarea>
-                  <button type="button" class="btn-hide"></button>
+                <button type="button" class="btn-hide"></button>
                 </div>
                 </div>
                 </div>
@@ -208,18 +192,18 @@
                 <td class="content"></td>
                 </tr>
 
-        <tr>
-          <th><b>AU</b></th>
-          <td class="content">AP_EN_Responsive</td>
-          <td class="content">AP - AU - Responsive</td>
-          <td>
-            <div class="popup_main">
-              <button class="open_popup">AU</button>
-              <div class="popup_body">
-                <div class="popup_back"></div>
-                <div class="popup_contain">
-                  <div class="popup_close">x</div>
-                  <textarea name id readonly cols="30" rows="1">
+      <tr>
+        <th><b>AU</b></th>
+        <td class="content">AP_EN_Responsive</td>
+        <td class="content">AP - AU - Responsive</td>
+        <td>
+          <div class="popup_main">
+            <button class="open_popup">AU</button>
+            <div class="popup_body">
+              <div class="popup_back"></div>
+              <div class="popup_contain">
+                <div class="popup_close">x</div>
+                <textarea name id readonly cols="30" rows="1">
 <table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
   <tbody>
       <tr>
@@ -240,7 +224,7 @@
   </tbody>
 </table>
                         </textarea>
-                  <button type="button" class="btn-hide"></button>
+                <button type="button" class="btn-hide"></button>
                 </div>
                 </div>
                 </div>
@@ -258,18 +242,18 @@
                 <td class="content"></td>
                 </tr>
 
-        <tr>
-          <th><b>NZ</b></th>
-          <td class="content">AP_EN_Responsive</td>
-          <td class="content">AP - NZ - Responsive</td>
-          <td>
-            <div class="popup_main">
-              <button class="open_popup">NZ</button>
-              <div class="popup_body">
-                <div class="popup_back"></div>
-                <div class="popup_contain">
-                  <div class="popup_close">x</div>
-                  <textarea name id readonly cols="30" rows="1">
+      <tr>
+        <th><b>NZ</b></th>
+        <td class="content">AP_EN_Responsive</td>
+        <td class="content">AP - NZ - Responsive</td>
+        <td>
+          <div class="popup_main">
+            <button class="open_popup">NZ</button>
+            <div class="popup_body">
+              <div class="popup_back"></div>
+              <div class="popup_contain">
+                <div class="popup_close">x</div>
+                <textarea name id readonly cols="30" rows="1">
 <table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
   <tbody>
       <tr>
@@ -290,7 +274,7 @@
   </tbody>
 </table>
                         </textarea>
-                  <button type="button" class="btn-hide"></button>
+                <button type="button" class="btn-hide"></button>
                 </div>
                 </div>
                 </div>
@@ -308,18 +292,18 @@
                 <td class="content"></td>
                 </tr>
 
-        <tr>
-          <th><b>IN</b></th>
-          <td class="content">AP_EN_Responsive</td>
-          <td class="content">AP - NZ - Responsive</td>
-          <td>
-            <div class="popup_main">
-              <button class="open_popup">IN</button>
-              <div class="popup_body">
-                <div class="popup_back"></div>
-                <div class="popup_contain">
-                  <div class="popup_close">x</div>
-                  <textarea name id readonly cols="30" rows="1">
+      <tr>
+        <th><b>IN</b></th>
+        <td class="content">AP_EN_Responsive</td>
+        <td class="content">AP - NZ - Responsive</td>
+        <td>
+          <div class="popup_main">
+            <button class="open_popup">IN</button>
+            <div class="popup_body">
+              <div class="popup_back"></div>
+              <div class="popup_contain">
+                <div class="popup_close">x</div>
+                <textarea name id readonly cols="30" rows="1">
 <table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
   <tbody>
       <tr>
@@ -337,7 +321,7 @@
   </tbody>
 </table>
                         </textarea>
-                  <button type="button" class="btn-hide"></button>
+                <button type="button" class="btn-hide"></button>
                 </div>
                 </div>
                 </div>
@@ -348,26 +332,26 @@
                 <td class="content">Rockwell Automation</td>
                 <td class="content">raindiamarketing@rockwellautomation.com</td>
                 <td class="content">AP_IN_Seedlist_2022_10</td>
-          <td class="content">(UTC+05:30) Chennai, Kolkata, Mumbai, New
-            Delhi</td>
-          <td class="content">India</td>
-          <td class="content"></td>
-          <td class="content"></td>
-          <td class="content"></td>
-        </tr>
+                <td class="content">(UTC+05:30) Chennai, Kolkata, Mumbai, New
+                  Delhi</td>
+                <td class="content">India</td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                </tr>
 
-        <tr>
-          <th><b>KR</b></th>
-          <td class="content">KR Responsive</td>
-          <td class="content">AP - KR - Responsive</td>
-          <td>
-            <div class="popup_main">
-              <button class="open_popup">KR</button>
-              <div class="popup_body">
-                <div class="popup_back"></div>
-                <div class="popup_contain">
-                  <div class="popup_close">x</div>
-                  <textarea name id readonly cols="30" rows="1">
+      <tr>
+        <th><b>KR</b></th>
+        <td class="content">KR Responsive</td>
+        <td class="content">AP - KR - Responsive</td>
+        <td>
+          <div class="popup_main">
+            <button class="open_popup">KR</button>
+            <div class="popup_body">
+              <div class="popup_back"></div>
+              <div class="popup_contain">
+                <div class="popup_close">x</div>
+                <textarea name id readonly cols="30" rows="1">
 <table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0">
   <tbody>
       <tr>
@@ -394,7 +378,7 @@
   </tbody>
 </table>
                         </textarea>
-                  <button type="button" class="btn-hide"></button>
+                <button type="button" class="btn-hide"></button>
                 </div>
                 </div>
                 </div>
@@ -412,18 +396,18 @@
                 <td class="content"></td>
                 </tr>
 
-        <tr>
-          <th><b>TW</b></th>
-          <td class="content">TW Responsive</td>
-          <td class="content">AP - TW - Responsive - Updated Jul 2019</td>
-          <td>
-            <div class="popup_main">
-              <button class="open_popup">TW</button>
-              <div class="popup_body">
-                <div class="popup_back"></div>
-                <div class="popup_contain">
-                  <div class="popup_close">x</div>
-                  <textarea name id readonly cols="30" rows="1">
+      <tr>
+        <th><b>TW</b></th>
+        <td class="content">TW Responsive</td>
+        <td class="content">AP - TW - Responsive - Updated Jul 2019</td>
+        <td>
+          <div class="popup_main">
+            <button class="open_popup">TW</button>
+            <div class="popup_body">
+              <div class="popup_back"></div>
+              <div class="popup_contain">
+                <div class="popup_close">x</div>
+                <textarea name id readonly cols="30" rows="1">
 <table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
   <tbody>
       <tr>
@@ -446,7 +430,7 @@
   </tbody>
 </table>
                         </textarea>
-                  <button type="button" class="btn-hide"></button>
+                <button type="button" class="btn-hide"></button>
                 </div>
                 </div>
                 </div>
@@ -464,18 +448,18 @@
                 <td class="content"></td>
                 </tr>
 
-        <tr>
-          <th><b>CN</b></th>
-          <td class="content">AP - CN - 2021</td>
-          <td class="content">AP - CN - Responsive</td>
-          <td>
-            <div class="popup_main">
-              <button class="open_popup">CN</button>
-              <div class="popup_body">
-                <div class="popup_back"></div>
-                <div class="popup_contain">
-                  <div class="popup_close">x</div>
-                  <textarea name id readonly cols="30" rows="1">
+      <tr>
+        <th><b>CN</b></th>
+        <td class="content">AP - CN - 2021</td>
+        <td class="content">AP - CN - Responsive</td>
+        <td>
+          <div class="popup_main">
+            <button class="open_popup">CN</button>
+            <div class="popup_body">
+              <div class="popup_back"></div>
+              <div class="popup_contain">
+                <div class="popup_close">x</div>
+                <textarea name id readonly cols="30" rows="1">
 <table align="center" bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0">
   <tbody>
       <tr>
@@ -496,7 +480,7 @@
   </tbody>
 </table>
                         </textarea>
-                  <button type="button" class="btn-hide"></button>
+                <button type="button" class="btn-hide"></button>
                 </div>
                 </div>
                 </div>
@@ -507,25 +491,25 @@
                 <td class="content">罗克韦尔自动化</td>
                 <td class="content">dtc@rockwellautomation.com</td>
                 <td class="content">AP_CN_Seedlist_2022_10</td>
-          <td class="content">(UTC+08:00) Beijing, Chongqing, Hong Kong,
-            Urumqi</td>
-          <td class="content">China</td>
-          <td class="content"></td>
-          <td class="content"></td>
-          <td class="content"></td>
-        </tr>
+                <td class="content">(UTC+08:00) Beijing, Chongqing, Hong Kong,
+                  Urumqi</td>
+                <td class="content">China</td>
+                <td class="content"></td>
+                <td class="content"></td>
+                <td class="content"></td>
+                </tr>
 
-        <tr>
-          <th><b>JP</b></th>
-          <td>
-            <span class="content">AP - Blank Header</span>
-            <div class="popup_main">
-              <button class="open_popup">HTML</button>
-              <div class="popup_body">
-                <div class="popup_back"></div>
-                <div class="popup_contain">
-                  <div class="popup_close">x</div>
-                  <textarea name id readonly>
+      <tr>
+        <th><b>JP</b></th>
+        <td>
+          <span class="content">AP - Blank Header</span>
+          <div class="popup_main">
+            <button class="open_popup">HTML</button>
+            <div class="popup_body">
+              <div class="popup_back"></div>
+              <div class="popup_contain">
+                <div class="popup_close">x</div>
+                <textarea name id readonly>
 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
   <tbody>
     <tr>
@@ -534,7 +518,7 @@
   </tbody>
 </table>
                         </textarea>
-                  <button type="button" class="btn-hide"></button>
+                <button type="button" class="btn-hide"></button>
                 </div>
                 </div>
                 </div>
@@ -547,7 +531,7 @@
                       <div class="popup_back"></div>
                       <div class="popup_contain">
                         <div class="popup_close">x</div>
-                  <textarea name id readonly>
+                        <textarea name id readonly>
                               <table align="center" bgcolor="#D4D6D7" border="0" cellpadding="5" cellspacing="0">
                                 <tbody>
                                   <tr>
@@ -568,18 +552,18 @@
                                 </tbody>
                               </table>
                             </textarea>
-                  <button type="button" class="btn-hide"></button>
+                <button type="button" class="btn-hide"></button>
                 </div>
                 </div>
                 </div>
                 <div class="popup_main">
-              <button class="open_popup" style="width: 110px;">TEXT
-                Footer</button>
-              <div class="popup_body">
-                <div class="popup_back"></div>
-                <div class="popup_contain">
-                  <div class="popup_close">x</div>
-                  <textarea name id readonly>
+                  <button class="open_popup" style="width: 110px;">TEXT
+                    Footer</button>
+                  <div class="popup_body">
+                    <div class="popup_back"></div>
+                    <div class="popup_contain">
+                      <div class="popup_close">x</div>
+                      <textarea name id readonly>
                             ----------------------------------------------------------------------------------------------------------------------------------------------
 
                             ロックウェルオートメーションジャパン株式会社
@@ -600,7 +584,7 @@
                             商標のリストは、こちらをご覧ください。 ロックウェル・オートメーションに帰属しない商標は、各企業に帰属します。
                             https://www.rockwellautomation.com/ja-jp/company/about-us/legal-notices/trademarks.html
                           </textarea>
-                  <button type="button" class="btn-hide"></button>
+                <button type="button" class="btn-hide"></button>
                 </div>
                 </div>
                 </div>
@@ -612,7 +596,7 @@
                       <div class="popup_back"></div>
                       <div class="popup_contain">
                         <div class="popup_close">x</div>
-                  <textarea name id readonly cols="30" rows="1">
+                        <textarea name id readonly cols="30" rows="1">
 <table align="center" bgcolor="#fff" border="0" cellpadding="5" cellspacing="0">
   <tbody>
     <tr>
@@ -642,7 +626,7 @@
   </tbody>
 </table>
                             </textarea>
-                  <button type="button" class="btn-hide"></button>
+                <button type="button" class="btn-hide"></button>
                 </div>
                 </div>
                 </div>
@@ -660,14 +644,14 @@
                 <td class="content"></td>
                 </tr>
 
-      </tbody>
+    </tbody>
     </table>
 
-    <div id="copied-success" class="copied">
-      Copied
-    </div>
+  <div id="copied-success" class="copied">
+    Copied
+  </div>
 
-  </body>
-  <script src="RW-Helpline.js"></script>
+</body>
+<script src="RW-Helpline.js"></script>
 
 </html>
