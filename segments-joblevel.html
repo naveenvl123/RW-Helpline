@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RW Helpline</title>
+        <script src="css/all-css.js"></script>
+
+    </head>
+
+    <body>
+        <section class="body">
+            <main-menu></main-menu>
+
+            <div class="details">
+                <table>
+                    <tr>
+                        <div class="output">
+                            <div class="flex">
+                                <h4 class="content">Job Level</h4><h4>:
+                                </h4><h5 class="content" id="cct"></h5>
+                            </div>
+                        </div>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form>
+                                <input type="checkbox" id="Display & Value"
+                                    value="Display & Value"><label
+                                    for="Display & Value">Display &
+                                    Value</label>
+                                <br>
+                                <input type="checkbox" id="Administrative"
+                                    value="Administrative"><label
+                                    for="Administrative">Administrative</label>
+                                <br>
+                                <input type="checkbox" id="Technician"
+                                    value="Technician"><label
+                                    for="Technician">Technician</label>
+                                <br>
+                                <input type="checkbox" id="Staff"
+                                    value="Staff"><label
+                                    for="Staff">Staff</label>
+                                <br>
+                                <input type="checkbox" id="Supervisor"
+                                    value="Supervisor"><label
+                                    for="Supervisor">Supervisor</label>
+                                <br>
+                                <input type="checkbox" id="Manager"
+                                    value="Manager"><label
+                                    for="Manager">Manager</label>
+                                <br>
+                                <input type="checkbox" id="Director"
+                                    value="Director"><label
+                                    for="Director">Director</label>
+                                <br>
+                                <input type="checkbox" id="Vice President"
+                                    value="Vice President"><label
+                                    for="Vice President">Vice President</label>
+                                <br>
+                                <input type="checkbox" id="Executive"
+                                    value="Executive"><label
+                                    for="Executive">Executive</label>
+                                <br>
+                                <input type="checkbox" id="Other"
+                                    value="Other"><label
+                                    for="Other">Other</label>
+                                <br>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <input style="margin-left: 13px;" type="button" onclick="CalculatedCustomerType()"
+                    value="Create">
+                
+                <br><br>
+            </div>
+            <div class="reference">
+                <strong>&nbsp;Reference :&nbsp;&nbsp;</strong> 
+                <a class="card mb-4" href="img/segments-joblevel/1.png"data-fancybox="Reference">
+                    <img src="img/reference.png" alt="">
+                </a>
+                <a class="card mb-4" href="img/segments-joblevel/2.png"data-fancybox="Reference"></a>
+            </di>
+        </section>
+
+        <dan-copied></dan-copied>
+
+    </body>
+
+    <script src="js/all-js.js"></script>
+    <script>
+    function CalculatedCustomerType() {
+        var coffee = document.forms[0];
+        var txt = "";
+        var i;
+        for (i = 0; i < coffee.length; i++) {
+            if (coffee[i].checked) {
+                txt = txt + coffee[i].value + ",";
+            }
+        }
+        document.getElementById("cct").textContent = txt;
+    }
+</script>
+</html>

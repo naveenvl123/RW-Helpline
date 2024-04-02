@@ -1,18 +1,3 @@
-$(".open_popup").click(function () {
-  $(this)
-    .parent(".popup_main")
-    .children(".popup_body")
-    .addClass("popup_body_show");
-});
-$(".popup_close").click(function () {
-  $(".popup_body").removeClass("popup_body_show");
-});
-$(".popup_back").click(function () {
-  $(".popup_body").removeClass("popup_body_show");
-});
-
-
-
 document.querySelectorAll(".content").forEach((item, index) => {
   item.addEventListener("click", async (event) => {
     if (!navigator.clipboard) {
@@ -43,10 +28,3 @@ $(document).ready(function () {
 
 });
 
-function openNav() {
-  document.getElementById("mySidenav").style.left = "0px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.left = "-255px";
-}

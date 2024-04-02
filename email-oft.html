@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RW Helpline</title>
+
+    <script src="css/all-css.js"></script>
+
+  </head>
+  <body>
+    <section class="body">
+      <main-menu></main-menu>
+      <div class="dan-content">
+
+        <h2>
+          HTML File Creation
+        </h2>
+
+        <ol>
+          <li>
+            Copy the respective email and paste <b class="content">_HTML</b> on
+            the end of the
+            name.
+          </li>
+          <li>Change the Email Group to <b>Events</b> and turn off <b>Enable
+              Eloqua Email Tracking</b>.</li>
+          <li>In <b>Email Style</b> change <b>Background Color to
+              white</b>.</li>
+          <li>Replace header to <b class="content">AP – Blank Header</b> with
+            <b>Background Color to white</b>.</li>
+          <li>Uncheck all the <b>Manage Links</b>. </li>
+          <li>Remove the entire line if it contains any <b>Field Merge</b>.</li>
+          <li>Generate html field with its respective UTM Code
+            <a target="_blank"
+              href="https://ops.marketing.rockwellautomation.com/!portal/app/login.php?redirect=%2F_apps%2FEloquaEmailExtract%2F">
+              Link
+            </a>.
+          </li>
+          <li>
+            Remove the auto generated date added before the email name.
+          </li>
+        </ol>
+
+        <h2>
+          HTML Edits
+        </h2>
+
+        <ol start="9">
+          <li>Remove the empty table which used to contain Header.</li>
+          <li>Replace <b>width=”100%”</b> to <b>width=”600”</b>.</li>
+          <li>Add <b class="content">align="center"</b> on the first table tag
+            after the body tag.</li>
+          <li>Replace:
+            <b><xmp style="margin: 5px 0 -5px 0;"> <span><eloqua type="emailFooter"></eloqua></span>
+              </xmp></b>
+            &nbsp;&nbsp;with it's <a href="index.html"
+              target="_blank">respective email footer</a> source code and change
+            Background colour to <b class="content">bgcolor="#ffffff"</b>. </li>
+          <li>Remove the entire line if it contains any <b>Field Merge</b> and
+            <b>Unsubscribe Link</b> in Footer.</li>
+          <li>Remove <b>&elqTrack=false</b> and Add the <b>UTM Contents</b> on
+            end of the links. <br><br>
+            <ul>
+              <li>
+                https://<b>www.example.com?</b>&utm_medium=<b>email</b>&utm_content=<b>AP_*_HTML</b>&utm_source=<b>AP_*_HTML</b>&utm_campaign=<b>UTMCode</b>
+              </li>
+              <li>
+                https://<b>www.example.com?</b>&utm_medium=<b>email</b>&utm_content=<b>AP_*_OFT</b>&utm_source=<b>AP_*_OFT</b>&utm_campaign=<b>UTMCode</b>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <b>No</b> need to track <b>Email</b> just Remove
+            <b>&elqTrack=false</b>.
+          </li>
+        </ol>
+
+        <h2>
+          Changing HTML to OFT
+        </h2>
+
+        <ol start="16">
+          <li>In Eloqua <b>=></b> Upload an Email <b>></b> Upload the edited
+            HTML file.</li>
+          <li>Next <b>=></b> Check image</li>
+          <li>Next <b>=></b> Make shore all links are Unchecked</li>
+          <li>Next <b>=></b>
+            <ul>
+              <li>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>:</b> Change <b>_HTML.html</b> to <b class="content">_OFT</b></li>
+              <li>Folder&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>:</b> Direct to the folder path.</li>
+              <li>Email Group <b>:</b> <b>Events</b> (most of the time)</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <dan-copied></dan-copied>
+  </body>
+
+  <script src="js/all-js.js"></script>
+
+</html>

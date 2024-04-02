@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <ul>
+          <li class="state" data-stuff="AL">Alabama</li>
+          <li class="state" data-stuff="FL">Florida</li>
+          <li class="state" data-stuff="GA">Georgia</li>
+        </ul>
+        <div>
+          Click any button
+        </div>
+      </section>
+
+
+      <div class="greeting2">
+        <p>Goodbye solar system?</p>
+    </div>
+
+</body>
+
+
+<script>
+    let greeting2 = document.querySelector(".greeting2");
+    greeting2.outerHTML = "Scratch that.";
+</script>
+
+<script>
+const statesData = {
+  "AL": 
+  {"name":"Alabama", 
+   "capital":"Montgomery", 
+   "descrip":"One",
+   "wikipedia":"https://en.wikipedia.org/wiki/Alabama"
+  },
+  "FL":
+  {"name":"Florida", 
+   "capital":"Tallahassee", 
+   "descrip":"Two",
+   "wikipedia":"https://en.wikipedia.org/wiki/Florida"
+  },
+  "GA":
+  {"name":"Georgia", 
+   "capital":"Atlanta",  
+   "descrip":"Three",
+   "wikipedia":"https://en.wikipedia.org/wiki/Georgia_(U.S._state)"
+  }
+}
+// end of data 
+
+
+let states = document.querySelectorAll('.state');
+let div = document.querySelector('div');
+
+// make it work
+states.forEach(function(el) {
+  el.onclick = (e) => {
+    // note the use of a data attribute in the HTML 
+    div.innerHTML = statesData[e.target.dataset.stuff]['name']+statesData[e.target.dataset.stuff]['descrip'];
+  };
+});
+
+</script>
+
+</html>
