@@ -67,6 +67,22 @@
                 https://<b>www.example.com?</b>&utm_medium=email&utm_content=<b>AP_ROKLive_2024_03_HTML</b>&utm_source=<b>AP_ROKLive_2024_03_HTML</b>&utm_campaign=<b>MultiInitiative_AP</b>
               </li>
             </ul>
+            <b>Email Name : </b><input type="text" id="textone" style="width: 100%;"/>
+            <br><br>
+            <b>UTM Code : </b><input type="text" id="textTWO" style="width: 100%;"/>
+            <br>
+            <br>
+            <button onclick="testVariable()" style="padding: 10px 20px;
+            background: #444;
+            color: #fff;
+            border: none;
+            border-radius: 5px;">Submit</button> 
+            <br><br>
+            <div style="min-height: 50px; background-color: darkgray;padding: 10px;width: min-content;">
+            <b class="content"><span id="spanResult1"></b>
+              <br><br>
+            <b class="content"><span id="spanResult2"></b>
+            </div> 
           </li>
           <li>
             <b>No</b> need to track <b>Email</b> just Remove
@@ -147,5 +163,14 @@
     </body>
 
     <script src="js/all-js.js"></script>
-
+    <script>
+      function testVariable() {
+          var strText = document.getElementById("textone").value;
+          var strText1 = document.getElementById("textTWO").value;
+          var result1 = '&utm_medium=email&utm_content=' + strText + '_HTML&utm_source=' + strText + '_HTML&utm_campaign=' + strText1;
+          var result2 = '&utm_medium=email&utm_content=' + strText + '_OFT&utm_source=' + strText + '_OFT&utm_campaign=' + strText1;
+          document.getElementById('spanResult1').textContent = result1;
+          document.getElementById('spanResult2').textContent = result2;
+      }
+  </script>
   </html>
