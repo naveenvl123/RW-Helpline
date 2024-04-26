@@ -10,13 +10,14 @@ function includeJS(src) {
 
 // Array of JavaScript file URLs to include
 const jsFiles = [
-    'js/jquery.3.5.1.js',
+    'js/jquery.3.4.1.js',
     'js/fancybox/fancybox.min.js',
     'js/copy.js',
     'js/popup.js',
     'js/main-menu.js',
     'nave-links.js',
     'js/RW-Helpline.js',
+    'js/tab-block.js',
     // Add more file URLs if needed
 ];
 

@@ -1,0 +1,21 @@
+.tab-block {
+  .accordion-header {
+    background-color: #444;
+    color: #fff;
+    padding: 10px 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .accordion-content {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .accordion-content.open {
+    max-height: fit-content;
+    /* Set the max-height to whatever value you need */
+  }
+}

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dan</title>
+</head>
+
+<style>
+    .d-tab {
+        width: 90%;
+        margin: auto;
+    }
+
+    .d-content h5 {
+        box-shadow: 3px 3px 9px 3px var(--color-4);
+        border-color: var(--color-4);
+        padding: 10px 10px;
+        cursor: pointer;
+        width: max-content;
+        font-size: 20px;
+    }
+
+    .d-tabBlock {
+        margin: 0 0 2.5rem;
+        box-shadow: 3px 3px 9px 3px var(--color-4);
+    }
+
+    .d-tabBlock-tabs::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+
+    .d-tabBlock-tabs {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .d-tabBlock-tab img {
+        width: 20px;
+    }
+
+    .d-tabBlock-tab {
+        background-color: var(--color-2);
+        border-color: var(--color-4);
+        border-left-style: solid;
+        border-top: solid;
+        border-width: 2px;
+        color: var(--color-5);
+        cursor: pointer;
+        font-weight: 600;
+        float: left;
+        padding: 10px 10px 5px 10px;
+        position: relative;
+        -webkit-transition: 0.1s ease-in-out;
+        transition: 0.1s ease-in-out;
+    }
+
+    .d-tabBlock-tab:last-of-type {
+        border-right-style: solid;
+    }
+
+    .d-tabBlock-tab::before,
+    .d-tabBlock-tab::after {
+        content: "";
+        display: block;
+        height: 4px;
+        position: absolute;
+        -webkit-transition: 0.1s ease-in-out;
+        transition: 0.1s ease-in-out;
+    }
+
+    .d-tabBlock-tab::before {
+        background-color: var(--color-5);
+        left: -2px;
+        right: -2px;
+        top: -2px;
+    }
+
+    .d-tabBlock-tab::after {
+        background-color: transparent;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+    }
+
+    .d-tabBlock-tab.is-active {
+        position: relative;
+        color: var(--color-7);
+        z-index: 1;
+    }
+
+    .d-tabBlock-tab.is-active::before {
+        background-color: var(--color-7);
+    }
+
+    .d-tabBlock-tab.is-active::after {
+        background-color: var(--color-2);
+    }
+
+    .d-tabBlock-content {
+        background-color: var(--color-2);
+        border: 2px solid var(--color-4);
+        border-right: none;
+        padding: 15px 10px 10px 10px;
+    }
+
+    .d-tabBlock> :last-child {
+        margin-bottom: 0;
+    }
+
+    .d-textarea textarea {
+        width: 100%;
+        height: 300px;
+        border: none;
+        resize: vertical;
+        font-size: 14px;
+    }
+
+    .d-textarea .d-copy {
+        position: absolute;
+        margin-top: -40px;
+        right: 7%;
+        border: none;
+        color: var(--color-2);
+        border-radius: 50px;
+        padding: 5px 15px;
+        font-size: 14px;
+        background-color: var(--color-7);
+        cursor: pointer;
+    }
+</style>
+
+
+<body class="index">
+
+    <div class="d-tab">
+        <div class="d-content">
+            <table>
+                <tr>
+                    <td>
+                        <b>
+                            <h5>
+                                dan-slider-3
+                            </h5>
+                        </b>
+                    </td>
+                    <td> : </td>
+                    <td>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum laudantium atque porro.
+                        Deserunt quos ex facere consequuntur, laboriosam adipisci animi ducimus sapiente natus nihil
+                        molestiae earum! Earum delectus facilis doloribus.
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <figure class="d-tabBlock">
+            <ul class="d-tabBlock-tabs">
+                <li class="d-tabBlock-tab is-active"> 1 </li>
+                <li class="d-tabBlock-tab"> 1 </li>
+                <li class="d-tabBlock-tab"> 1 </li>
+                <li class="d-tabBlock-tab"> 1 </li>
+            </ul>
+            <div class="d-tabBlock-content">
+                <!--------------------------------------------------------------------------------- HTML -->
+                <div class="d-tabBlock-pan">
+                    <div class="d-textarea">
+                        <textarea readonly>
+HTML
+                        </textarea>
+                        <button class="d-copy">Copy</button>
+                    </div>
+                </div>
+                <!--------------------------------------------------------------------------------- HTML -->
+
+                <!--------------------------------------------------------------------------------- CSS -->
+                <div class="d-tabBlock-pan">
+                    <div class="d-textarea">
+                        <textarea readonly>
+CSS
+                        </textarea>
+                        <button class="d-copy">Copy</button>
+                    </div>
+                </div>
+                <!--------------------------------------------------------------------------------- CSS -->
+
+                <!--------------------------------------------------------------------------------- Js -->
+                <div class="d-tabBlock-pan">
+                    <div class="d-textarea">
+                        <textarea readonly>
+Js
+                        </textarea>
+                        <button class="d-copy">Copy</button>
+                    </div>
+                </div>
+                <!--------------------------------------------------------------------------------- Js -->
+
+                <!--------------------------------------------------------------------------------- Js -->
+                <div class="d-tabBlock-pan">
+                    <div class="d-textarea">
+                        <textarea readonly>
+React
+                        </textarea>
+                        <button class="d-copy">Copy</button>
+                    </div>
+                </div>
+                <!--------------------------------------------------------------------------------- Js -->
+            </div>
+        </figure>
+    </div>
+
+</body>
+
+<script src="../js/jquery.3.4.1.js"></script>
+
+<script>
+    //___________________________________________________________________________ TabBlock
+    var TabBlock = {
+        s: {
+            animLen: 0,
+        },
+
+        init: function () {
+            TabBlock.bindUIActions();
+            TabBlock.hideInactive();
+        },
+
+        bindUIActions: function () {
+            $(".d-tabBlock-tabs").on("click", ".d-tabBlock-tab", function () {
+                TabBlock.switchTab($(this));
+            });
+        },
+
+        hideInactive: function () {
+            var $tabBlocks = $(".d-tabBlock");
+
+            $tabBlocks.each(function (i) {
+                var $tabBlock = $($tabBlocks[i]),
+                    $panes = $tabBlock.find(".d-tabBlock-pan"),
+                    $activeTab = $tabBlock.find(".d-tabBlock-tab.is-active");
+
+                $panes.hide();
+                $($panes[$activeTab.index()]).show();
+            });
+        },
+
+        switchTab: function ($tab) {
+            var $context = $tab.closest(".d-tabBlock");
+
+            if (!$tab.hasClass("is-active")) {
+                $tab.siblings().removeClass("is-active");
+                $tab.addClass("is-active");
+
+                TabBlock.showPane($tab.index(), $context);
+            }
+        },
+        showPane: function (i, $context) {
+            var $panes = $context.find(".d-tabBlock-pan");
+            $panes.slideUp(TabBlock.s.animLen);
+            $($panes[i]).slideDown(TabBlock.s.animLen);
+        },
+    };
+
+    $(function () {
+        TabBlock.init();
+    });
+
+    //___________________________________________________________________________ Textarea 
+
+    $(function () {
+        $(".d-textarea .d-copy").click(function () {
+            $(this).prev("textarea").focus();
+            $(this).prev("textarea").select();
+            document.execCommand("copy");
+        });
+    });
+
+</script>
+
+</html>

@@ -417,6 +417,10 @@ table>tbody {
   overflow-x: auto;
 }
 
+.reference-img img {
+  width: 17px;
+}
+
 /* SideNav */
 .sidenav {
   height: 100%;
