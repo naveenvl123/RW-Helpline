@@ -1,139 +1,81 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculated Customer Type</title>
 </head>
-
-<style>
-    body {
-        font-family: roboto, sans-serif;
-        line-height: 1.5;
-    }
-</style>
-
 <body>
-    <component-card data-title="This is a card component"
-        data-image="https://assets.codepen.io/437758/internal/avatars/users/default.png"
-        data-image-alt="Mark Conroy's avatar from CodePen.io"
-        data-description="We are reading a tutorial about how to create web components. More specifically, how to create nested web components."
-        data-cta-href="#" data-cta-text="Read more">
-    </component-card>
 
+<form id="coffeeForm1">
+    <input type="checkbox" id="regular1" name="coffeeType1" value="Regular">
+    <label for="regular1">Regular</label><br>
+    <input type="checkbox" id="decaf1" name="coffeeType1" value="Decaf">
+    <label for="decaf1">Decaf</label><br>
+    <input type="checkbox" id="latte1" name="coffeeType1" value="Latte">
+    <label for="latte1">Latte</label><br>
+    <input type="checkbox" id="cappuccino1" name="coffeeType1" value="Cappuccino">
+    <label for="cappuccino1">Cappuccino</label><br>
+    <button type="submit">Submit</button>
+</form>
 
+<p id="cct1"></p>
 
+<form id="coffeeForm2">
+    <input type="checkbox" id="regular2" name="coffeeType2" value="Regular">
+    <label for="regular2">Regular</label><br>
+    <input type="checkbox" id="decaf2" name="coffeeType2" value="Decaf">
+    <label for="decaf2">Decaf</label><br>
+    <input type="checkbox" id="latte2" name="coffeeType2" value="Latte">
+    <label for="latte2">Latte</label><br>
+    <input type="checkbox" id="cappuccino2" name="coffeeType2" value="Cappuccino">
+    <label for="cappuccino2">Cappuccino</label><br>
+    <button type="submit">Submit</button>
+</form>
 
-
-
-</body>
+<p id="cct2"></p>
 
 <script>
-            // Create a class for the element
-            class Card extends HTMLElement {
-                constructor() {
-                    super();
+    document.addEventListener("DOMContentLoaded", function() {
+        // Bind event listeners to form submit events
+        document.getElementById('coffeeForm1').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            CalculatedCustomerType('#coffeeForm1', 'cct1');
+        });
 
-                    this.setAttribute("role", "article");
-                    this.classList.add("card");
+        document.getElementById('coffeeForm2').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            CalculatedCustomerType('#coffeeForm2', 'cct2');
+        });
+    });
 
-                    // Title
-                    const title = document.createElement("h2");
-                    title.classList.add("card__title");
-                    title.textContent = this.getAttribute("data-title");
+    function CalculatedCustomerType(formSelector, targetElementId) {
+        var form = document.querySelector(formSelector);
+        if (!form) {
+            console.error("Form element not found with selector:", formSelector);
+            return;
+        }
 
-                    // Description
-                    const description = document.createElement("div");
-                    description.classList.add("card__description");
-                    description.innerHTML = this.getAttribute("data-description");
-
-                    // Image
-                    let imageWrapper;
-                    if (this.hasAttribute("data-image")) {
-                        const image = document.createElement("img");
-                        image.classList.add("card__image");
-                        image.src = this.getAttribute("data-image");
-                        if (this.hasAttribute("data-image-alt")) {
-                            image.alt = this.getAttribute("data-image-alt");
-                        }
-                        imageWrapper = document.createElement("div");
-                        imageWrapper.classList.add("card__image-wrapper");
-                        imageWrapper.appendChild(image);
-                        this.appendChild(imageWrapper);
-                    }
-
-                    // CTA
-                    let ctaContainer;
-                    if (this.hasAttribute('data-cta-href')) {
-                        const cta = document.createElement("a");
-                        cta.classList.add("card__link");
-                        cta.href = this.getAttribute("data-cta-href");
-                        cta.textContent = this.getAttribute("data-cta-text");
-                        ctaContainer = document.createElement("div");
-                        ctaContainer.classList.add('card__cta');
-                        ctaContainer.appendChild(cta);
-                    }
-
-                    const contentContainer = document.createElement("div");
-                    contentContainer.classList.add("card__content");
-                    contentContainer.appendChild(title);
-                    contentContainer.appendChild(description);
-                    if (ctaContainer !== 'undefined') {
-                        contentContainer.appendChild(ctaContainer);
-                    }
-
-                // Create some CSS to apply to the shadow dom
-                const style = document.createElement("style");
-                style.textContent = `
-    :host {
-    display: block;
-    background: #eaeaea;
-    border-radius: 10px;
-    border: 1px solid black;
-    max-width: 300px;
-    color: #333;
-    }
-
-    .card__content {
-    padding: 1rem;
-    }
-    
-    .card__title {
-    color: #333;
-    margin-top: 0;
-    line-height: 1.1;
-    }
-    
-    img {
-    width: 100%;
-    display: block;
-    border-radius: 10px 10px 0 0;
-    }
-    
-    .card__cta {
-    margin-top: 1.5rem;
-    }
-    
-    .card__cta a {
-    color: #eaeaea;
-    display: block;
-    background-color: #333;
-    padding: 0.25rem 1rem;
-    border-radius: 5px;
-    text-align: center;
-    }
-    `;
-
-                // Attach the created elements to the shadow dom
-                const shadowRoot = this.attachShadow({ mode: "closed" });
-                shadowRoot.appendChild(style);
-                if (imageWrapper !== undefined) {
-                    shadowRoot.appendChild(imageWrapper);
-                }
-                shadowRoot.appendChild(contentContainer);
+        var elements = form.elements;
+        var txt = "";
+        for (var i = 0; i < elements.length; i++) {
+            if (elements[i].checked) {
+                txt += elements[i].value + ", ";
             }
         }
 
-            // Define the new element
-            customElements.define("component-card", Card);
-        </script>
+        // Remove trailing comma and space
+        txt = txt.replace(/, $/, '');
 
+        var targetElement = document.getElementById(targetElementId);
+        if (!targetElement) {
+            console.error("Target element not found with id:", targetElementId);
+            return;
+        }
+
+        targetElement.textContent = txt;
+    }
+</script>
+
+</body>
 </html>
