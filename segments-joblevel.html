@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RW Helpline</title>
     <link rel="stylesheet" href="css/all-css.css">
+
+    <script src="js/jquery.3.4.1.js"></script>
+
     <style>
         table>tbody>tr {
             display: flex;
@@ -26,6 +29,19 @@
         table.output>tbody>tr>td h4 {
             margin: 0;
             padding: 3px;
+            min-height: 25px;
+        }
+
+        form {
+            display: grid;
+        }
+
+        span {
+            display: block;
+            height: 18px;
+        }
+        .create-btn{
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -84,261 +100,91 @@
                 <tr>
                     <td>
                         <form id="customertype">
-                            <input type="checkbox" id="End User" value="End User">
-                            <label for="End User">End User</label>
-                            <br>
-                            <input type="checkbox" id="OEM" value="OEM">
-                            <label for="OEM">OEM</label>
-                            <br>
-                            <input type="checkbox" id="System Integrator" value="System Integrator">
-                            <label for="System Integrator">System
-                                Integrator</label>
-                            <br>
-                            <input type="checkbox" id="A&E,EPC or Consultant,A&E EPC or Consultant"
-                                value="A&E,EPC or Consultant,A&E EPC or Consultant">
-                            <label for="A&E,EPC or Consultant,A&E EPC or Consultant">A&E,EPC
-                                or Consultant,A&E EPC or
-                                Consultant</label>
-                            <br>
-                            <input type="checkbox" id="Contractor" value="Contractor">
-                            <label for="Contractor">Contractor</label>
-                            <br>
-                            <input type="checkbox" id="RA Authorized Distributor" value="RA Authorized Distributor">
-                            <label for="RA Authorized Distributor">RA
-                                Authorized Distributor</label>
-                            <br>
-                            <input type="checkbox" id="Educational Institution" value="Educational Institution">
-                            <label for="Educational Institution">Educational
-                                Institution</label>
-                            <br>
-                            <input type="checkbox" id="Non Authorized Distributor" value="Non Authorized Distributor">
-                            <label for="Non Authorized Distributor">Non
-                                Authorized Distributor</label>
-                            <br>
-                            <input type="checkbox" id="RA Employee" value="RA Employee">
-                            <label for="RA Employee">RA Employee</label>
-                            <br>
-                            <input type="checkbox" id="Panel Builder" value="Panel Builder">
-                            <label for="Panel Builder">Panel Builder</label>
-                            <br>
-                            <input type="checkbox" id="Other" value="Other">
-                            <label for="Other">Other</label>
-                            <br>
+                            <span><input type="checkbox" id="End User" value="End User"><label for="End User">End User</label></span>
+                            <span><input type="checkbox" id="OEM" value="OEM"><label for="OEM">OEM</label></span>
+                            <span><input type="checkbox" id="System Integrator" value="System Integrator"><label for="System Integrator">System Integrator</label></span>
+                            <span><input type="checkbox" id="A&E,EPC or Consultant,A&E EPC or Consultant" value="A&E,EPC or Consultant,A&E EPC or Consultant"><label for="A&E,EPC or Consultant,A&E EPC or Consultant">A&E,EPC or Consultant,A&E EPC or Consultant</label></span>
+                            <span><input type="checkbox" id="Contractor" value="Contractor"><label for="Contractor">Contractor</label></span>
+                            <span><input type="checkbox" id="RA Authorized Distributor" value="RA Authorized Distributor"><label for="RA Authorized Distributor">RA Authorized Distributor</label></span>
+                            <span><input type="checkbox" id="Educational Institution" value="Educational Institution"><label for="Educational Institution">Educational Institution</label></span>
+                            <span><input type="checkbox" id="Non Authorized Distributor" value="Non Authorized Distributor"><label for="Non Authorized Distributor">Non Authorized Distributor</label></span>
+                            <span><input type="checkbox" id="RA Employee" value="RA Employee"><label for="RA Employee">RA Employee</label></span>
+                            <span><input type="checkbox" id="Panel Builder" value="Panel Builder"><label for="Panel Builder">Panel Builder</label></span>
+                            <span><input type="checkbox" id="Other1" value="Other"><label for="Other1">Other</label></span>
                             <button class="create-btn" type="submit">Submit</button>
                         </form>
                     </td>
                     <td>
                         <form id="industry">
-                            <input type="checkbox" id="Aerospace" value="Aerospace"><label
-                                for="Aerospace">Aerospace</label>
-                            <br>
-                            <input type="checkbox" id="Airports" value="Airports"><label for="Airports">Airports</label>
-                            <br>
-                            <input type="checkbox" id="Automotive" value="Automotive"><label
-                                for="Automotive">Automotive</label>
-                            <br>
-                            <input type="checkbox" id="Cement & Aggregate" value="Cement & Aggregate"><label
-                                for="Cement & Aggregate">Cement
-                                &
-                                Aggregate</label>
-                            <br>
-                            <input type="checkbox" id="Chemicals & Plastics" value="Chemicals & Plastics"><label
-                                for="Chemicals & Plastics">Chemicals &
-                                Plastics</label>
-                            <br>
-                            <input type="checkbox" id="Entertainment" value="Entertainment"><label
-                                for="Entertainment">Entertainment</label>
-                            <br>
-                            <input type="checkbox" id="Fibers & Textiles" value="Fibers & Textiles"><label
-                                for="Fibers & Textiles">Fibers &
-                                Textiles</label>
-                            <br>
-                            <input type="checkbox" id="Food & Beverage" value="Food & Beverage"><label
-                                for="Food & Beverage">Food &
-                                Beverage</label>
-                            <br>
-                            <input type="checkbox" id="Glass" value="Glass"><label for="Glass">Glass</label>
-                            <br>
-                            <input type="checkbox" id="HVAC" value="HVAC"><label for="HVAC">HVAC</label>
-                            <br>
-                            <input type="checkbox" id="Heating Ventilation & Air Conditioning"
-                                value="Heating Ventilation & Air Conditioning"><label
-                                for="Heating Ventilation & Air Conditioning">Heating
-                                Ventilation & Air
-                                Conditioning</label>
-                            <br>
-                            <input type="checkbox" id="Household & Personal Care"
-                                value="Household & Personal Care"><label for="Household & Personal Care">Household &
-                                Personal Care</label>
-                            <br>
-                            <input type="checkbox" id="Life Sciences" value="Life Sciences"><label
-                                for="Life Sciences">Life
-                                Sciences</label>
-                            <br>
-                            <input type="checkbox" id="Marine" value="Marine"><label for="Marine">Marine</label>
-                            <br>
-                            <input type="checkbox" id="Mass Transit" value="Mass Transit"><label for="Mass Transit">Mass
-                                Transit</label>
-                            <br>
-                            <input type="checkbox" id="Metals" value="Metals"><label for="Metals">Metals</label>
-                            <br>
-                            <input type="checkbox" id="Mining" value="Mining"><label for="Mining">Mining</label>
-                            <br>
-                            <input type="checkbox" id="Oil & Gas" value="Oil & Gas"><label for="Oil & Gas">Oil
-                                &
-                                Gas</label>
-                            <br>
-                            <input type="checkbox" id="Power & Energy" value="Power & Energy"><label
-                                for="Power & Energy">Power &
-                                Energy</label>
-                            <br>
-                            <input type="checkbox" id="Printing & Publishing" value="Printing & Publishing"><label
-                                for="Printing & Publishing">Printing &
-                                Publishing</label>
-                            <br>
-                            <input type="checkbox" id="Pulp & Paper" value="Pulp & Paper"><label for="Pulp & Paper">Pulp
-                                & Paper</label>
-                            <br>
-                            <input type="checkbox" id="Renewable Energy" value="Renewable Energy"><label
-                                for="Renewable Energy">Renewable
-                                Energy</label>
-                            <br>
-                            <input type="checkbox" id="Semiconductor & Electronics"
-                                value="Semiconductor & Electronics"><label
-                                for="Semiconductor & Electronics">Semiconductor
-                                & Electronics</label>
-                            <br>
-                            <input type="checkbox" id="Tire & Rubber" value="Tire & Rubber"><label
-                                for="Tire & Rubber">Tire &
-                                Rubber</label>
-                            <br>
-                            <input type="checkbox" id="Traditional Power" value="Traditional Power"><label
-                                for="Traditional Power">Traditional
-                                Power</label>
-                            <br>
-                            <input type="checkbox" id="Whs EComm & Dist" value="Whs EComm & Dist"><label
-                                for="Whs EComm & Dist">Whs
-                                EComm &
-                                Dist</label>
-                            <br>
-                            <input type="checkbox" id="Warehousing E-commerce & Distribution"
-                                value="Warehousing E-commerce & Distribution"><label
-                                for="Warehousing E-commerce & Distribution">Warehousing
-                                E-commerce &
-                                Distribution</label>
-                            <br>
-                            <input type="checkbox" id="Waste Management" value="Waste Management"><label
-                                for="Waste Management">Waste
-                                Management</label>
-                            <br>
-                            <input type="checkbox" id="Water & Wastewater" value="Water & Wastewater"><label
-                                for="Water & Wastewater">Water
-                                &
-                                Wastewater</label>
-                            <br>
-                            <input type="checkbox" id="Other" value="Other"><label for="Other">Other</label>
-                            <br>
+                            <span><input type="checkbox" id="Aerospace" value="Aerospace"><label for="Aerospace">Aerospace</label></span>
+                            <span><input type="checkbox" id="Airports" value="Airports"><label for="Airports">Airports</label></span>
+                            <span><input type="checkbox" id="Automotive" value="Automotive"><label for="Automotive">Automotive</label></span>
+                            <span><input type="checkbox" id="Cement & Aggregate" value="Cement & Aggregate"><label for="Cement & Aggregate">Cement & Aggregate</label></span>
+                            <span><input type="checkbox" id="Chemicals & Plastics" value="Chemicals & Plastics"><label for="Chemicals & Plastics">Chemicals & Plastics</label></span>
+                            <span><input type="checkbox" id="Entertainment" value="Entertainment"><label for="Entertainment">Entertainment</label></span>
+                            <span><input type="checkbox" id="Fibers & Textiles" value="Fibers & Textiles"><label for="Fibers & Textiles">Fibers & Textiles</label></span>
+                            <span><input type="checkbox" id="Food & Beverage" value="Food & Beverage"><label for="Food & Beverage">Food & Beverage</label></span>
+                            <span><input type="checkbox" id="Glass" value="Glass"><label for="Glass">Glass</label></span>
+                            <span><input type="checkbox" id="HVAC" value="HVAC"><label for="HVAC">HVAC</label></span>
+                            <span><input type="checkbox" id="Heating Ventilation & Air Conditioning" value="Heating Ventilation & Air Conditioning"><label for="Heating Ventilation & Air Conditioning">Heating Ventilation & Air Conditioning</label></span>
+                            <span><input type="checkbox" id="Household & Personal Care" value="Household & Personal Care"><label for="Household & Personal Care">Household & Personal Care</label></span>
+                            <span><input type="checkbox" id="Life Sciences" value="Life Sciences"><label for="Life Sciences">Life Sciences</label></span>
+                            <span><input type="checkbox" id="Marine" value="Marine"><label for="Marine">Marine</label></span>
+                            <span><input type="checkbox" id="Mass Transit" value="Mass Transit"><label for="Mass Transit">Mass Transit</label></span>
+                            <span><input type="checkbox" id="Metals" value="Metals"><label for="Metals">Metals</label></span>
+                            <span><input type="checkbox" id="Mining" value="Mining"><label for="Mining">Mining</label></span>
+                            <span><input type="checkbox" id="Oil & Gas" value="Oil & Gas"><label for="Oil & Gas">Oil & Gas</label></span>
+                            <span><input type="checkbox" id="Power & Energy" value="Power & Energy"><label for="Power & Energy">Power & Energy</label></span>
+                            <span><input type="checkbox" id="Printing & Publishing" value="Printing & Publishing"><label for="Printing & Publishing">Printing & Publishing</label></span>
+                            <span><input type="checkbox" id="Pulp & Paper" value="Pulp & Paper"><label for="Pulp & Paper">Pulp & Paper</label></span>
+                            <span><input type="checkbox" id="Renewable Energy" value="Renewable Energy"><label for="Renewable Energy">Renewable Energy</label></span>
+                            <span><input type="checkbox" id="Semiconductor & Electronics" value="Semiconductor & Electronics"><label for="Semiconductor & Electronics">Semiconductor & Electronics</label></span>
+                            <span><input type="checkbox" id="Tire & Rubber" value="Tire & Rubber"><label for="Tire & Rubber">Tire & Rubber</label></span>
+                            <span><input type="checkbox" id="Traditional Power" value="Traditional Power"><label for="Traditional Power">Traditional Power</label></span>
+                            <span><input type="checkbox" id="Whs EComm & Dist" value="Whs EComm & Dist"><label for="Whs EComm & Dist">Whs EComm & Dist</label></span>
+                            <span><input type="checkbox" id="Warehousing E-commerce & Distribution" value="Warehousing E-commerce & Distribution"><label for="Warehousing E-commerce & Distribution">Warehousing E-commerce & Distribution</label></span>
+                            <span><input type="checkbox" id="Waste Management" value="Waste Management"><label for="Waste Management">Waste Management</label></span>
+                            <span><input type="checkbox" id="Water & Wastewater" value="Water & Wastewater"><label for="Water & Wastewater">Water & Wastewater</label></span>
+                            <span><input type="checkbox" id="Other2" value="Other"><label for="Other2">Other</label></span>
                             <button class="create-btn" type="submit">Submit</button>
                         </form>
                     </td>
                     <td>
                         <form id="jobfunction">
-                            <input type="checkbox" id="Acct/Fina/Purchasing,Accounting/Finance/Purchasing"
-                                value="Acct/Fina/Purchasing,Accounting/Finance/Purchasing"><label
-                                for="Acct/Fina/Purchasing,Accounting/Finance/Purchasing">Acct/Fina/Purchasing,Accounting/Finance/Purchasing</label>
-                            <br>
-                            <input type="checkbox" id="Engineering - Chemical" value="Engineering - Chemical"><label
-                                for="Engineering - Chemical">Engineering -
-                                Chemical</label>
-                            <br>
-                            <input type="checkbox" id="Engineering - Controls" value="Engineering - Controls"><label
-                                for="Engineering - Controls">Engineering -
-                                Controls</label>
-                            <br>
-                            <input type="checkbox" id="Engineering - Design" value="Engineering - Design"><label
-                                for="Engineering - Design">Engineering -
-                                Design</label>
-                            <br>
-                            <input type="checkbox" id="Engineering - Mechanical" value="Engineering - Mechanical"><label
-                                for="Engineering - Mechanical">Engineering -
-                                Mechanical</label>
-                            <br>
-                            <input type="checkbox" id="Engineering - Process" value="Engineering - Process"><label
-                                for="Engineering - Process">Engineering -
-                                Process</label>
-                            <br>
-                            <input type="checkbox" id="Engineering - Quality" value="Engineering - Quality"><label
-                                for="Engineering - Quality">Engineering -
-                                Quality</label>
-                            <br>
-                            <input type="checkbox" id="Human Resources" value="Human Resources"><label
-                                for="Human Resources">Human
-                                Resources</label>
-                            <br>
-                            <input type="checkbox" id="Information Tech,Information Technology"
-                                value="Information Tech,Information Technology"><label
-                                for="Information Tech,Information Technology">Information
-                                Tech,Information Technology</label>
-                            <br>
-                            <input type="checkbox" id="Legal" value="Legal"><label for="Legal">Legal</label>
-                            <br>
-                            <input type="checkbox" id="Maintenance" value="Maintenance"><label
-                                for="Maintenance">Maintenance</label>
-                            <br>
-                            <input type="checkbox" id="Marketing" value="Marketing"><label
-                                for="Marketing">Marketing</label>
-                            <br>
-                            <input type="checkbox" id="Operations" value="Operations"><label
-                                for="Operations">Operations</label>
-                            <br>
-                            <input type="checkbox" id="Quality" value="Quality"><label for="Quality">Quality</label>
-                            <br>
-                            <input type="checkbox" id="Research and Development" value="Research and Development"><label
-                                for="Research and Development">Research and
-                                Development</label>
-                            <br>
-                            <input type="checkbox" id="Safety" value="Safety"><label for="Safety">Safety</label>
-                            <br>
-                            <input type="checkbox" id="Sales" value="Sales"><label for="Sales">Sales</label>
-                            <br>
-                            <input type="checkbox" id="Service/Support" value="Service/Support"><label
-                                for="Service/Support">Service/Support</label>
-                            <br>
-                            <input type="checkbox" id="Other" value="Other"><label for="Other">Other</label>
-                            <br>
+                            <span><input type="checkbox" id="Acct/Fina/Purchasing,Accounting/Finance/Purchasing" value="Acct/Fina/Purchasing,Accounting/Finance/Purchasing"><label for="Acct/Fina/Purchasing,Accounting/Finance/Purchasing">Acct/Fina/Purchasing,Accounting/Finance/Purchasing</label></span>
+                            <span><input type="checkbox" id="Engineering - Chemical" value="Engineering - Chemical"><label for="Engineering - Chemical">Engineering - Chemical</label></span>
+                            <span><input type="checkbox" id="Engineering - Controls" value="Engineering - Controls"><label for="Engineering - Controls">Engineering - Controls</label></span>
+                            <span><input type="checkbox" id="Engineering - Design" value="Engineering - Design"><label for="Engineering - Design">Engineering - Design</label></span>
+                            <span><input type="checkbox" id="Engineering - Mechanical" value="Engineering - Mechanical"><label for="Engineering - Mechanical">Engineering - Mechanical</label></span>
+                            <span><input type="checkbox" id="Engineering - Process" value="Engineering - Process"><label for="Engineering - Process">Engineering - Process</label></span>
+                            <span><input type="checkbox" id="Engineering - Quality" value="Engineering - Quality"><label for="Engineering - Quality">Engineering - Quality</label></span>
+                            <span><input type="checkbox" id="Human Resources" value="Human Resources"><label for="Human Resources">Human Resources</label></span>
+                            <span><input type="checkbox" id="Information Tech,Information Technology" value="Information Tech,Information Technology"><label for="Information Tech,Information Technology">Information Tech,Information Technology</label></span>
+                            <span><input type="checkbox" id="Legal" value="Legal"><label for="Legal">Legal</label></span>
+                            <span><input type="checkbox" id="Maintenance" value="Maintenance"><label for="Maintenance">Maintenance</label></span>
+                            <span><input type="checkbox" id="Marketing" value="Marketing"><label for="Marketing">Marketing</label></span>
+                            <span><input type="checkbox" id="Operations" value="Operations"><label for="Operations">Operations</label></span>
+                            <span><input type="checkbox" id="Quality" value="Quality"><label for="Quality">Quality</label></span>
+                            <span><input type="checkbox" id="Research and Development" value="Research and Development"><label for="Research and Development">Research and Development</label></span>
+                            <span><input type="checkbox" id="Safety" value="Safety"><label for="Safety">Safety</label></span>
+                            <span><input type="checkbox" id="Sales" value="Sales"><label for="Sales">Sales</label></span>
+                            <span><input type="checkbox" id="Service/Support" value="Service/Support"><label for="Service/Support">Service/Support</label></span>
+                            <span><input type="checkbox" id="Other3" value="Other"><label for="Other3">Other</label></span>
                             <button class="create-btn" type="submit">Submit</button>
                         </form>
                     </td>
                     <td>
                         <form id="jobLevel">
-                            <input type="checkbox" id="Display & Value" value="Display & Value"><label
-                                for="Display & Value">Display
-                                &
-                                Value</label>
-                            <br>
-                            <input type="checkbox" id="Administrative" value="Administrative"><label
-                                for="Administrative">Administrative</label>
-                            <br>
-                            <input type="checkbox" id="Technician" value="Technician"><label
-                                for="Technician">Technician</label>
-                            <br>
-                            <input type="checkbox" id="Staff" value="Staff"><label for="Staff">Staff</label>
-                            <br>
-                            <input type="checkbox" id="Supervisor" value="Supervisor"><label
-                                for="Supervisor">Supervisor</label>
-                            <br>
-                            <input type="checkbox" id="Manager" value="Manager"><label for="Manager">Manager</label>
-                            <br>
-                            <input type="checkbox" id="Director" value="Director"><label for="Director">Director</label>
-                            <br>
-                            <input type="checkbox" id="Vice President" value="Vice President"><label
-                                for="Vice President">Vice President</label>
-                            <br>
-                            <input type="checkbox" id="Executive" value="Executive"><label
-                                for="Executive">Executive</label>
-                            <br>
-                            <input type="checkbox" id="Other" value="Other"><label for="Other">Other</label>
-                            <br>
+                            <span><input type="checkbox" id="Display & Value" value="Display & Value"><label for="Display & Value">Display & Value</label></span>
+                            <span><input type="checkbox" id="Administrative" value="Administrative"><label for="Administrative">Administrative</label></span>
+                            <span><input type="checkbox" id="Technician" value="Technician"><label for="Technician">Technician</label></span>
+                            <span><input type="checkbox" id="Staff" value="Staff"><label for="Staff">Staff</label></span>
+                            <span><input type="checkbox" id="Supervisor" value="Supervisor"><label for="Supervisor">Supervisor</label></span>
+                            <span><input type="checkbox" id="Manager" value="Manager"><label for="Manager">Manager</label></span>
+                            <span><input type="checkbox" id="Director" value="Director"><label for="Director">Director</label></span>
+                            <span><input type="checkbox" id="Vice President" value="Vice President"><label for="Vice President">Vice President</label></span>
+                            <span><input type="checkbox" id="Executive" value="Executive"><label for="Executive">Executive</label></span>
+                            <span><input type="checkbox" id="Other4" value="Other"><label for="Other4">Other</label></span>
                             <button class="create-btn" type="submit">Submit</button>
                         </form>
                     </td>
@@ -351,65 +197,59 @@
                 <img src="img/reference.png" alt>
             </a>
             <a class="card mb-4" href="img/segments-joblevel/2.png" data-fancybox="Reference"></a>
-            </di>
+        </div>
     </section>
 
     <dan-copied></dan-copied>
 
-</body>
+    <script src="js/copy.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/main-menu.js"></script>
+    <script src="nave-links.js"></script>
+    <script src="js/RW-Helpline.js"></script>
+    <script src="js/tab-block.js"></script>
 
-<script src="js/all-js.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Bind event listeners to form submit events
+    <script>
+        $(document).ready(function () {
+            // Bind event listeners to form submit events
 
-        document.getElementById('customertype').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the default form submission
-            CalculatedCustomerType('#customertype', 'cct1');
+            $('#customertype').submit(function (event) {
+                event.preventDefault(); // Prevent the default form submission
+                CalculatedCustomerType('#customertype', 'cct1');
+            });
+
+            $('#industry').submit(function (event) {
+                event.preventDefault(); // Prevent the default form submission
+                CalculatedCustomerType('#industry', 'cct2');
+            });
+
+            $('#jobfunction').submit(function (event) {
+                event.preventDefault(); // Prevent the default form submission
+                CalculatedCustomerType('#jobfunction', 'cct3');
+            });
+
+            $('#jobLevel').submit(function (event) {
+                event.preventDefault(); // Prevent the default form submission
+                CalculatedCustomerType('#jobLevel', 'cct4');
+            });
         });
 
-        document.getElementById('industry').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the default form submission
-            CalculatedCustomerType('#industry', 'cct2');
-        });
+        function CalculatedCustomerType(formSelector, targetElementId) {
+            var txt = "";
+            $(formSelector + ' input:checked').each(function () {
+                txt += $(this).val() + ",";
+            });
 
-        document.getElementById('jobfunction').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the default form submission
-            CalculatedCustomerType('#jobfunction', 'cct3');
-        });
-
-        document.getElementById('jobLevel').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the default form submission
-            CalculatedCustomerType('#jobLevel', 'cct4');
-        });
-    });
-
-    function CalculatedCustomerType(formSelector, targetElementId) {
-        var form = document.querySelector(formSelector);
-        if (!form) {
-            console.error("Form element not found with selector:", formSelector);
-            return;
-        }
-
-        var elements = form.elements;
-        var txt = "";
-        for (var i = 0; i < elements.length; i++) {
-            if (elements[i].checked) {
-                txt += elements[i].value + ",";
+            // Check if txt ends with a comma
+            if (txt.length > 0 && txt[txt.length - 1] === ',') {
+                // Remove the last character (the comma)
+                txt = txt.slice(0, -1);
             }
+
+            $("#" + targetElementId).text(txt);
         }
+    </script>
 
-        // Remove trailing comma and space
-        txt = txt.replace(/,\s*$/, '');
-
-        var targetElement = document.getElementById(targetElementId);
-        if (!targetElement) {
-            console.error("Target element not found with id:", targetElementId);
-            return;
-        }
-
-        targetElement.textContent = txt;
-    }
-</script>
+</body>
 
 </html>
