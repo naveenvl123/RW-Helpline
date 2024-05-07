@@ -32,6 +32,19 @@ a {
   }
 }
 
+.fancy-page img.col-4 {
+  width: 24%;
+  vertical-align: top;
+}
+
+ul.warning {
+  list-style: '⚠. ';
+}
+
+ul.question {
+  list-style: '?. ';
+}
+
 .create-btn {
   padding: 10px 20px;
   background: #444;
