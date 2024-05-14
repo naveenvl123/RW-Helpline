@@ -8,7 +8,7 @@ class AppHeader extends HTMLElement {
 <a href="email.html"><span>Email</span></a>
 <a href="email-oft.html"><span>OFT</span></a>
 <a href="segments-picklist.html"><span>Picklist</span></a>
-<a href="prank.html" tar>Danger☢️</a>
+<a href="!samples.html" tar>Do not Press ☢️</a>
  `
     }
 }
