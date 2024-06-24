@@ -25,13 +25,13 @@ class MenuComponent extends HTMLElement {
                 font-weight: 600;
                 font-size: 30px;
                 cursor: pointer;
-                color: #444;
+                color: #fff;
                 transition: 0.3s;
                 padding-left: 5px;
               }
           
             #hamburgerMenu:hover {
-                color: #fff;
+                color: #444;
               }
 
               .details {
