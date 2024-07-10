@@ -54,6 +54,9 @@
             <table class="output">
                 <tr>
                     <td>
+                        <h4 class="content">Country</h4>
+                        </td>
+                        <td>
                         <h4 class="content">Calculated Customer Type</h4>
                     </td>
                     <td>
@@ -80,9 +83,15 @@
                     <td>
                         <h4>:</h4>
                     </td>
+                    <td>
+                        <h4>:</h4>
+                    </td>
                 </tr>
                 <tr>
                     <td>
+                        <h4 class="content" id="cct0"></h4>
+                        </td>
+                        <td>
                         <h4 class="content" id="cct1"></h4>
                     </td>
                     <td>
@@ -99,6 +108,25 @@
             <table>
                 <tr>
                     <td>
+                        <form id="country">
+                            <span><input type="checkbox" id="PH" value="PH"><label for="PH">PH - Philippine</label></span>
+                            <span><input type="checkbox" id="ID" value="ID"><label for="ID">ID - Indonesia</label></span>
+                            <span><input type="checkbox" id="PK" value="PK"><label for="PK">PK - Pakistan</label></span>
+                            <span><input type="checkbox" id="TH" value="TH"><label for="TH">TH - Thailand</label></span>
+                            <span><input type="checkbox" id="MY" value="MY"><label for="MY">MY - Malaysia</label></span>
+                            <span><input type="checkbox" id="SG" value="SG"><label for="SG">SG - Singapore</label></span>
+                            <span><input type="checkbox" id="VN" value="VN"><label for="VN">VN - Vietnam</label></span>
+                            <span><input type="checkbox" id="MM" value="MM"><label for="MM">MM - Myanmar (Burma)</label></span>
+                            <span><input type="checkbox" id="AU" value="AU"><label for="AU">AU - Australia</label></span>
+                            <span><input type="checkbox" id="NZ" value="NZ"><label for="NZ">NZ - New Zealand</label></span>
+                            <span><input type="checkbox" id="IN" value="IN"><label for="IN">IN - India</label></span>
+                            <span><input type="checkbox" id="TW" value="TW"><label for="TW">TW - Taiwan, China</label></span>
+                            <span><input type="checkbox" id="CN" value="CN"><label for="CN">CN - China</label></span>
+                            <span><input type="checkbox" id="JP" value="JP"><label for="JP">JP - Japan</label></span>
+                            <button class="create-btn" type="submit">Submit</button>
+                        </form>
+                        </td>
+                        <td>
                         <form id="customertype">
                             <span><input type="checkbox" id="End User" value="End User"><label for="End User">End User</label></span>
                             <span><input type="checkbox" id="OEM" value="OEM"><label for="OEM">OEM</label></span>
@@ -175,7 +203,6 @@
                     </td>
                     <td>
                         <form id="jobLevel">
-                            <span><input type="checkbox" id="Display & Value" value="Display & Value"><label for="Display & Value">Display & Value</label></span>
                             <span><input type="checkbox" id="Administrative" value="Administrative"><label for="Administrative">Administrative</label></span>
                             <span><input type="checkbox" id="Technician" value="Technician"><label for="Technician">Technician</label></span>
                             <span><input type="checkbox" id="Staff" value="Staff"><label for="Staff">Staff</label></span>
@@ -206,6 +233,11 @@
         $(document).ready(function () {
             // Bind event listeners to form submit events
 
+            $('#country').submit(function (event) {
+                event.preventDefault(); // Prevent the default form submission
+                CalculatedCustomerType('#country', 'cct0');
+            });
+            
             $('#customertype').submit(function (event) {
                 event.preventDefault(); // Prevent the default form submission
                 CalculatedCustomerType('#customertype', 'cct1');
