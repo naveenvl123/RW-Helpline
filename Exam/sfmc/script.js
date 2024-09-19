@@ -6,7 +6,7 @@ const questions = [
     ...checkboxMultipleChoiceQuestions
 ];
 
-const optionLetters = ["A", "B", "C", "D"];
+const optionLetters = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
 // Function to shuffle options for randomness
 function shuffleArray(array) {
@@ -174,10 +174,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         updateLiveCounter(); // Final counter update on form submission
 
-        if (!allQuestionsAnswered) {
-            alert("Please answer all questions.");
-            return;
-        }
+        // if (!allQuestionsAnswered) {
+        //     alert("Please answer all questions.");
+        //     return;
+        // }
 
         resultElement.style.display = "block";
         if (totalScore >= (questions.length / 2)) {

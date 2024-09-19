@@ -1,12 +1,107 @@
 const trueFalseQuestions = [
     {
         type: "trueFalse",
-        question: "The Earth is flat.",
-        answer: "False",
+        question: "",
+        answer: "",
     },
     {
         type: "trueFalse",
-        question: "Light travels faster than sound.",
-        answer: "True",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
+    },
+    {
+        type: "trueFalse",
+        question: "",
+        answer: "",
     }
 ];
