@@ -24,7 +24,7 @@ function updateLiveCounter() {
             answeredCount++;
         }
     });
-    document.getElementById("counter").textContent = `${answeredCount} out of ${questions.length} questions answered`;
+    document.getElementById("counter").textContent = `${answeredCount}/${questions.length}`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
