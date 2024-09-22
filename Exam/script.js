@@ -2,7 +2,6 @@
 // Assuming you have included multipleChoice.js, trueFalse.js, and checkboxMultipleChoice.js in your HTML
 const questions = [
     ...multipleChoiceQuestions,
-    ...trueFalseQuestions,
     ...checkboxMultipleChoiceQuestions
 ];
 
