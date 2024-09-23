@@ -21,6 +21,7 @@ body {
     border-radius: 10px;
     width: 100%;
     animation: fadeIn 1s ease-in-out;
+    max-width: 900px;
 }
 
 h1 {
@@ -48,6 +49,13 @@ div#counter {
     color: #222;
     animation: fadeIn 1s ease-in-out;
 }
+
+.question p {
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 100%; /* or set a specific width like 600px if needed */
+}
+
 
 .error-message {
     color: red;

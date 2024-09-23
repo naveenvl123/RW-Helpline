@@ -1,5 +1,3 @@
-// Import all the different types of questions
-// Assuming you have included multipleChoice.js, trueFalse.js, and checkboxMultipleChoice.js in your HTML
 const questions = [
     ...multipleChoiceQuestions
 ];
@@ -45,22 +43,28 @@ document.addEventListener("DOMContentLoaded", () => {
         errorMessage.classList.add("error-message");
         errorMessage.textContent = "Please answer this question";
 
+        // Create the question text
         let questionText = document.createElement("p");
+        questionText.style.whiteSpace = "normal"; // Ensures text wraps properly
+        questionText.style.wordWrap = "break-word"; // Ensures long words wrap
         questionText.textContent = `${index + 1}. ${q.question}`;
         questionElement.appendChild(questionText);
         questionElement.appendChild(errorMessage);
 
         let optionsContainer = document.createElement("div");
         optionsContainer.classList.add("options");
+        optionsContainer.style.display = "inline-block"; // Ensures inline-block for better alignment
 
         if (q.type === "multipleChoice") {
             shuffleArray(q.options);
             q.options.forEach((option, i) => {
                 let label = document.createElement("label");
                 label.classList.add("option-label");
+                label.style.display = "flex"; // Flex to ensure inline with label and text
+                label.style.alignItems = "center"; // Ensures proper alignment with the radio button
                 label.innerHTML = `
                     <input type="radio" name="question${index}" value="${option}">
-                    <div class="option-prefix">${optionLetters[i]}</div>
+                    <div class="option-prefix" style="margin-right: 10px;">${optionLetters[i]}</div>
                     <span>${option}</span>
                 `;
                 label.addEventListener("click", function () {
@@ -73,9 +77,11 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (q.type === "trueFalse") {
             let trueLabel = document.createElement("label");
             trueLabel.classList.add("option-label");
+            trueLabel.style.display = "flex";
+            trueLabel.style.alignItems = "center";
             trueLabel.innerHTML = `
                 <input type="radio" name="question${index}" value="True">
-                <div class="option-prefix">T</div>
+                <div class="option-prefix" style="margin-right: 10px;">T</div>
                 <span>True</span>
             `;
             trueLabel.addEventListener("click", function () {
@@ -87,9 +93,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let falseLabel = document.createElement("label");
             falseLabel.classList.add("option-label");
+            falseLabel.style.display = "flex";
+            falseLabel.style.alignItems = "center";
             falseLabel.innerHTML = `
                 <input type="radio" name="question${index}" value="False">
-                <div class="option-prefix">F</div>
+                <div class="option-prefix" style="margin-right: 10px;">F</div>
                 <span>False</span>
             `;
             falseLabel.addEventListener("click", function () {
@@ -103,9 +111,11 @@ document.addEventListener("DOMContentLoaded", () => {
             q.options.forEach((option, i) => {
                 let label = document.createElement("label");
                 label.classList.add("option-label");
+                label.style.display = "flex";
+                label.style.alignItems = "center";
                 label.innerHTML = `
                     <input type="checkbox" name="question${index}" value="${option}">
-                    <div class="option-prefix">${optionLetters[i]}</div>
+                    <div class="option-prefix" style="margin-right: 10px;">${optionLetters[i]}</div>
                     <span>${option}</span>
                 `;
                 label.addEventListener("change", function () {
@@ -171,11 +181,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         updateLiveCounter(); // Final counter update on form submission
-
-        // if (!allQuestionsAnswered) {
-        //     alert("Please answer all questions.");
-        //     return;
-        // }
 
         resultElement.style.display = "block";
         if (totalScore >= (questions.length / 2)) {
