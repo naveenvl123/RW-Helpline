@@ -1,8 +1,7 @@
 // Import all the different types of questions
 // Assuming you have included multipleChoice.js, trueFalse.js, and checkboxMultipleChoice.js in your HTML
 const questions = [
-    ...multipleChoiceQuestions,
-    ...checkboxMultipleChoiceQuestions
+    ...multipleChoiceQuestions
 ];
 
 const optionLetters = ["A", "B", "C", "D", "E", "F", "G", "H"];

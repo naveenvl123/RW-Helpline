@@ -61,11 +61,12 @@ div#counter {
 .options {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1px;
 }
 
 .option-label {
-    font-size: 1rem;
+    font-size: .9rem;
+    font-weight: 500;
     display: flex;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.2);
