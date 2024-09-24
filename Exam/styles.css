@@ -104,7 +104,7 @@ div#counter {
 .option-label.wrong {
     background: #ff98a2c7;
     border-color: #ffffff;
-    transform: translateX(-40px);
+    transform: translateX(-10px);
 }
 
 .option-prefix {
