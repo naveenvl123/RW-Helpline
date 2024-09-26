@@ -241,7 +241,7 @@ const multipleChoiceQuestions = [
   {
     type: "multipleChoice",
     question:
-      "A marketer wants to send an email to a sendable data extension that contains a Customer_ID field with a numeric data type that relates to the subscriber key on the all subscriber list as a send relationship. Which two statements are correct about the email send behavior for any subscriber who currently does not exist on the all subscriber list? (Choose 2)",
+      "A marketer wants to send an email to a sendable data extension that contains a Customer_ID field with a numeric data type that relates to the subscriber key on the all subscriber list as a send relationship. Which two statements are correct about the email send behavior for any subscriber who currently does not exist on the all subscriber list?",
     options: [
       "The email address and subscriber key will be added to the all subscriber list.",
       "The subscriber will be added to the all subscriber list with a status of Active.",
@@ -299,7 +299,7 @@ const multipleChoiceQuestions = [
       "Use inline CSS styling on all HTML elements",
     ],
     note:
-      "The correct answers are 'Include @media query CSS in the email' and 'Use inline CSS styling on all HTML elements' because these are essential techniques for responsive email design. @media queries ensure that the layout adapts to different screen sizes, while inline CSS guarantees compatibility with most email clients. 'Include style='display"
+      "The correct answers are 'Include @media query CSS in the email' and 'Use inline CSS styling on all HTML elements' because these are essential techniques for responsive email design. @media queries ensure that the layout adapts to different screen sizes, while inline CSS guarantees compatibility with most email clients. 'Include style='display:block' on all images' ensures proper rendering but does not contribute to responsiveness. 'Use a Basic, Empty, or Themed Template' doesn’t ensure responsiveness by itself."
   },
   {
     type: "multipleChoice",
@@ -449,5 +449,451 @@ const multipleChoiceQuestions = [
     answer: ["Wait Until", "Decision Split", "Send SMS"],
     note:
       "The correct answers are 'Wait Until,' 'Decision Split,' and 'Send SMS.' These are all Canvas Activities available in Journey Builder, allowing marketers to create more personalized and dynamic customer journeys. 'Query Activity' is not a Journey Builder activity, and 'Post to Facebook' is more related to social media integration, not a core Journey Builder function."
+  },
+  {
+    type: "checkboxMultipleChoice",
+    question:
+      "A company has set out to increase their subscriber base. They hired a team of marketing consultants to develop an acquisition plan backed by data. What are two effective methods to acquire new subscribers? (Choose 2)",
+    options: [
+      "Require customers to provide their email address when calling customer service.",
+      "Have customers opt in to email before they can shop online.",
+      "Ask for an email address when a customer makes a purchase in-store.",
+      "Create an in-store SMS campaign that offers a discount for opting in.",
+    ],
+    answer: [
+      "Ask for an email address when a customer makes a purchase in-store.",
+      "Create an in-store SMS campaign that offers a discount for opting in.",
+    ],
+    note:
+      "The correct answers, 'Ask for an email address when a customer makes a purchase in-store' and 'Create an in-store SMS campaign that offers a discount for opting in,' are effective because they provide customers with a clear incentive to subscribe. Asking for an email during in-store purchases captures engaged customers, and offering discounts through SMS campaigns attracts customers with the promise of savings. The other options, such as requiring email before shopping online or through customer service calls, could create friction, discouraging potential subscribers."
+  },
+  {
+    type: "multipleChoice",
+    question:
+      "A marketing team is creating a new data extension. The data extension configuration is very similar to a data extension that is already in use. What creation method should the team use to create the new data extension?",
+    options: [
+      "Create from a Filtered Data Extension",
+      "Create from Template",
+      "Create from Existing",
+      "Create from New",
+    ],
+    answer: "Create from Existing",
+    note:
+      "The correct answer, 'Create from Existing,' is ideal because it allows the team to quickly replicate an existing data extension, saving time and ensuring consistency. Other options like 'Create from New' would require building the extension from scratch, and 'Create from a Filtered Data Extension' does not apply since they need a full extension, not a filtered version."
+  },
+  {
+    type: "checkboxMultipleChoice",
+    question:
+      "The marketing team at NTO is working to make newsletter emails more relevant to the subscribers. The first step is to segment subscribers so NTO is not sending a 'batch and blast' newsletter. The second step is to personalize content based on data that has been collected from subscribers. What are two ways NTO can continue to improve the relevance of its newsletter? (Choose 2)",
+    options: [
+      "Use a substitution string to populate a subscriber's name in the subject line",
+      "Change the color of the email background to match their subscribers' preferred color of choice",
+      "Use a substitution string to populate a photo of the subscriber in the header of the email",
+      "Create content tailored to subscribers' interests and use dynamic rules to populate relevant content",
+    ],
+    answer: [
+      "Use a substitution string to populate a subscriber's name in the subject line",
+      "Create content tailored to subscribers' interests and use dynamic rules to populate relevant content",
+    ],
+    note:
+      "The correct answers, 'Use a substitution string to populate a subscriber's name in the subject line' and 'Create content tailored to subscribers' interests and use dynamic rules to populate relevant content,' enhance the relevance of emails by personalizing both the subject line and the content. This makes the email feel more tailored to the subscriber, leading to higher engagement. Other options, such as changing background colors or adding a subscriber's photo, do not meaningfully impact the relevance of the email content itself."
+  },
+  {
+    type: "multipleChoice",
+    question:
+      "What single place in Content Builder would a marketer store CSS used in several Paste HTML Templates?",
+    options: [
+      "Code Snippet",
+      "Style Block",
+      "Script Activity",
+      "Free Form Code Block",
+    ],
+    answer: "Code Snippet",
+    note:
+      "The correct answer, 'Code Snippet,' allows marketers to store reusable pieces of code, including CSS, that can be applied across multiple templates without having to rewrite it each time. Other options like 'Style Block' or 'Free Form Code Block' are not designed for managing reusable CSS across multiple templates, while 'Script Activity' is used for automating tasks, not storing styles."
+  },
+  {
+    type: "multipleChoice",
+    question:
+      "When using a mobile-optimized template, what causes the mobile layout to display?",
+    options: [
+      "A subscriber attribute that dictates a mobile layout preference",
+      "The email client detection tracking pixel",
+      "The screen size of the device that is used to view the email",
+      "The specific device that is used to view the email",
+    ],
+    answer: "The screen size of the device that is used to view the email",
+    note:
+      "The correct answer, 'The screen size of the device that is used to view the email,' ensures that the email layout adapts based on the device's screen size, optimizing the viewing experience for mobile users. This is the core principle of responsive design. Other options, like using a subscriber attribute or a specific device, do not directly trigger layout changes based on mobile optimization."
+  },
+  {
+    type: "multipleChoice",
+    question:
+      "Northern Trail Outfitters (NTO) uses link aliases within the HTML versions of its emails to indicate when clicks occurred, even if the same URL is used multiple times within a send. A marketing employee has been asked to pull the email addresses of all customers who clicked on the link associated with 'Main Banner Top' in NTO’s most recent newsletter. Where can the marketer most easily find this information?",
+    options: [
+      "Tracking Job Links tab > URL ID",
+      "Tracking Click Activity tab > Link View",
+      "Tracking Click Activity tab > Email Overlay View",
+      "Tracking Overview tab > Clicks",
+    ],
+    answer: "Tracking Click Activity tab > Link View",
+    note:
+      "The correct answer, 'Tracking Click Activity tab > Link View,' provides a detailed view of specific link clicks, allowing the marketer to track which subscribers clicked on the 'Main Banner Top' link. Other options like 'Tracking Job Links tab > URL ID' would not provide the most user-friendly or direct path to the specific link's click activity."
+  },
+  {
+    type: "checkboxMultipleChoice",
+    question:
+      "Why should a marketer ensure that field lengths are accurate when creating a data extension? (Choose 2)",
+    options: [
+      "To determine the correct data type",
+      "To optimize import process speed",
+      "To ensure data integrity",
+      "To save the data extension",
+    ],
+    answer: ["To optimize import process speed", "To ensure data integrity"],
+    note:
+      "The correct answers, 'To optimize import process speed' and 'To ensure data integrity,' are important because setting appropriate field lengths minimizes data storage usage, which speeds up imports and prevents potential errors caused by data truncation. The other options, like determining the correct data type or saving the data extension, do not directly relate to the field length accuracy."
+  },
+  {
+    type: "checkboxMultipleChoice",
+    question:
+      "A marketer is about to introduce Content Builder to the entire Northern Trail Outfitters marketing team. Which three considerations should the marketing team keep in mind as they begin using Content Builder? (Choose 3)",
+    options: [
+      "Establish a naming convention optimized for search.",
+      "Import duplicate copies of content for different messages or groups.",
+      "Create a folder structure prior to importing assets.",
+      "Review permissions and roles for users accessing Content Builder.",
+      "Focus on creating and importing content for one primary channel.",
+    ],
+    answer: [
+      "Establish a naming convention optimized for search.",
+      "Create a folder structure prior to importing assets.",
+      "Review permissions and roles for users accessing Content Builder.",
+    ],
+    note:
+      "The correct answers, 'Establish a naming convention optimized for search,' 'Create a folder structure prior to importing assets,' and 'Review permissions and roles for users accessing Content Builder,' focus on maintaining organization and control within Content Builder. Having a naming convention and folder structure ensures that content is easy to find and manage, while reviewing permissions ensures that only authorized users can access and modify content. Importing duplicate content or focusing on only one channel would create unnecessary clutter and limit cross-channel use."
+  },
+  {
+    type: "checkboxMultipleChoice",
+    question:
+      "A marketer wants to run an Account Send Summary report. Which option can be configured when running this report? (Choose 3)",
+    options: [
+      "Report results file format",
+      "Report results delivery location",
+      "Error report log location",
+      "Date range parameters",
+      "Error handling parameters",
+    ],
+    answer: [
+      "Report results file format",
+      "Report results delivery location",
+      "Date range parameters",
+    ],
+    note:
+      "The correct answers, 'Report results file format,' 'Report results delivery location,' and 'Date range parameters,' give flexibility to customize how and where the report is delivered, and the period it covers. Options like error log or handling parameters are not typically configurable in a standard Account Send Summary report."
+  },
+  {
+    type: "multipleChoice",
+    question:
+      "Northern Trail Outfitters is using a Smart Capture form on a CloudPage to capture contest registrations in a data extension. Corporate has requested a nightly file with all registrants in this data extension be sent daily from Marketing Cloud to an external SFTP. Which automation configuration should be used to achieve this?",
+    options: [
+      "Scheduled Automation > SQL Query Activity > File Transfer Activity",
+      "File Drop Automation > Data Extract Activity > File Transfer Activity",
+      "File Drop Automation > SQL Query Activity > File Transfer Activity",
+      "Scheduled Automation > Data Extract Activity > File Transfer Activity",
+    ],
+    answer:
+      "Scheduled Automation > Data Extract Activity > File Transfer Activity",
+    note:
+      "The correct answer, 'Scheduled Automation > Data Extract Activity > File Transfer Activity,' is ideal for automatically sending a file containing the registrants to an external SFTP. The combination of scheduled automation, data extraction, and file transfer ensures that the process is automated and runs reliably each night. Other configurations may be too complex or not fit the scenario described."
+    },
+  {
+    type: "multipleChoice",
+    question:
+      "The NTO email team is creating a reusable content block for its deals to run with campaigns. NTO will cross-promote this campaign in other emails in a single-column content area. This content will have one image, with text below it. How can the NTO email team create one content area and reuse it across other emails using Content Builder without writing any custom HTML?",
+    options: [
+      "Create an HTML content block",
+      "Create a text content block",
+      "Create an image content block",
+      "Create a free form content block",
+    ],
+    answer: "Create a free form content block",
+    note:
+      "The correct answer, 'Create a free form content block,' allows NTO to easily create a reusable content block containing both text and images without the need for custom HTML. Other options, like using a text block or an image block, limit the flexibility needed for mixing text and images, while HTML blocks would require coding."
+  },
+  {
+    type: "checkboxMultipleChoice",
+    question:
+      "Which file type delimiter is available in the Import Wizard? (Choose 3)",
+    options: ["Tab", "Comma", "Other", "Pipe", "Fixed Length"],
+    answer: ["Tab", "Comma", "Other"],
+    note:
+      "The correct answers, 'Tab,' 'Comma,' and 'Other,' represent common delimiters supported by the Import Wizard for parsing data in files. Options like 'Pipe' and 'Fixed Length' are not widely supported in standard Import Wizard operations."
+  },
+  {
+    type: "checkboxMultipleChoice",
+    question:
+      "Which two best practices should the customer follow to ensure marketers across the company are taking full advantage of Content Builder? (Choose 2)",
+    options: [
+      "Optimize the way content is stored with a naming convention",
+      "Plan for content to be used cross-channel, eliminating duplicates",
+      "Import all content up front, rather than piece by piece",
+      "Create folders for each type of uploaded content",
+    ],
+    answer: [
+      "Optimize the way content is stored with a naming convention",
+      "Plan for content to be used cross-channel, eliminating duplicates",
+    ],
+    note:
+      "The correct answers, 'Optimize the way content is stored with a naming convention' and 'Plan for content to be used cross-channel, eliminating duplicates,' help ensure that content is organized and easily reusable across channels. Creating duplicates and importing everything at once without structure would cause confusion and inefficiencies."
+  },
+  {
+    type: "multipleChoice",
+    question:
+      "Northern Trail Outfitters has a Master Customer shared data extension. The company wants to make the table available to some of the business units, but not all of them. How can access to the Master Customer table be restricted?",
+    options: [
+      "Data/Time Range for Access",
+      "Shared Data Extension Permissions",
+      "Manage Data Extension Policies",
+      "Data Extension Sharing Rules",
+    ],
+    answer: "Shared Data Extension Permissions",
+    note:
+      "The correct answer, 'Shared Data Extension Permissions,' allows NTO to control which business units have access to the data extension. This feature ensures proper segmentation of data without having to share it with all units, unlike options like 'Data Extension Sharing Rules' or 'Manage Data Extension Policies,' which may not provide the same level of granular access control."
+  },
+  {
+    type: "multipleChoice",
+    question:
+      "Each time Northern Trail Outfitters sends its monthly promotional email, the volume of support calls spikes. The executive team would like the marketing team to slowly send emails throughout the day to avoid customers waiting on hold. Which feature should the marketing team use to achieve this?",
+    options: [
+      "Send Flow",
+      "Triggered Send",
+      "Send Email Activity",
+      "Send Throttling",
+    ],
+    answer: "Send Throttling",
+    note:
+      "The correct answer, 'Send Throttling,' allows the marketing team to control the speed at which emails are sent throughout the day, preventing a large spike in support calls. Other options like 'Send Flow' and 'Triggered Send' are not designed for pacing email sends, while 'Send Email Activity' simply sends emails without pacing control."
+  },
+  {
+    type: "checkboxMultipleChoice",
+    question:
+      "A marketer sends a re-engagement email to contacts who have not opened or clicked emails in the last month. This email contains a call-to-action (CTA) prompting the recipient to 'Click here to keep receiving our emails.' In which two ways can the marketer determine who clicked on the CTA? (Choose 2)",
+    options: [
+      "Select the click activity bar chart from the email overlay view of the click activity tab",
+      "Select the URL or tracking alias from the link view tab of the click activity tab",
+      "Select unique clicks on the overview tab in the inbox activity section",
+      "Select the URL ID for the URL or tracking alias from the job links tab",
+    ],
+    answer: [
+      "Select the URL or tracking alias from the link view tab of the click activity tab",
+      "Select unique clicks on the overview tab in the inbox activity section",
+    ],
+    note:
+      "The correct answers, 'Select the URL or tracking alias from the link view tab of the click activity tab' and 'Select unique clicks on the overview tab in the inbox activity section,' provide the necessary tools to track engagement and clicks for the re-engagement email. Other options, such as using the email overlay view, may not give detailed information about specific link clicks."
+  },
+  {
+    type: "multipleChoice",
+    question: "Which tactic will improve deliverability for a new sender?",
+    options: [
+      "Send email to ISPs that have been notified of the new sender",
+      "Send email during the holiday season when new senders are less likely to be detected",
+      "Send email to the most active and engaged customers",
+      "Send email to a minimum of 35,000 subscribers per ISP per day",
+    ],
+    answer: "Send email to the most active and engaged customers",
+    note:
+      "The correct answer, 'Send email to the most active and engaged customers,' helps improve deliverability by ensuring that the emails are sent to recipients who are more likely to engage, boosting positive signals for email providers. Options like sending during the holidays or to large numbers of subscribers could lead to deliverability issues."
+  },
+  {
+    type: "checkboxMultipleChoice",
+    question:
+      "A marketing team is using the Import Activity to import a CSV file into a data extension. The file location is the system default File Location: Enhanced FTP. The import has failed and the error is 'File Not Found.' Which two steps should resolve the issue? (Choose 2)",
+    options: [
+      "Use the Import Wizard to point to rename the file on the FTP.",
+      "Change the file format from 'comma separated value' to 'tab delimited.'",
+      "Ensure the file to be imported is in the Import Folder on the Enhanced FTP.",
+      "Ensure the name of the file in the Import Activity matches the file name on the FTP.",
+    ],
+    answer: [
+      "Ensure the file to be imported is in the Import Folder on the Enhanced FTP.",
+      "Ensure the name of the file in the Import Activity matches the file name on the FTP.",
+    ],
+    note:
+      "The correct answers, 'Ensure the file to be imported is in the Import Folder on the Enhanced FTP' and 'Ensure the name of the file in the Import Activity matches the file name on the FTP,' are the most likely causes of the error. Ensuring the file is placed in the correct folder and that the names match resolves the issue, whereas options like changing the file format would not address the root problem."
+  },
+  {
+    type: "checkboxMultipleChoice",
+    question: "Which feature can be included in a content box? (Choose 3)",
+    options: [
+      "Facebook Like",
+      "Forward to a Friend",
+      "Microsites",
+      "Content Detective",
+      "Social Forward",
+    ],
+    answer: ["Facebook Like", "Forward to a Friend", "Social Forward"],
+    note:
+      "The correct answers, 'Facebook Like,' 'Forward to a Friend,' and 'Social Forward,' are all interactive features that can be included in a content box to enhance engagement with recipients. Options like 'Microsites' or 'Content Detective' are not interactive features typically used in content boxes."
+  },
+  {
+    type: "multipleChoice",
+    question:
+      "NTO is having its annual footwear sale. NTO wants to try and top its revenue from last year's sale. The campaign last year was a series of emails targeting NTO customers that have expressed a specific interest in footwear. Which additional tactic should improve on NTO's targeted segmentation?",
+    options: [
+      "Content focused on winter sports items for holiday shopping",
+      "Personalized imagery influenced by subscriber preferences",
+      "Images of products that the customer has previously purchased",
+      "Full-width lifestyle imagery featuring attractive people",
+    ],
+    answer: "Personalized imagery influenced by subscriber preferences",
+    note:
+      "The correct answer, 'Personalized imagery influenced by subscriber preferences,' further refines segmentation by customizing the email content based on the preferences of individual customers. This tactic will likely lead to higher engagement and sales, unlike more general strategies like focusing on lifestyle imagery or winter sports."
+  },
+  {
+    type: "checkboxMultipleChoice",
+    question:
+      "NTO launched a new custom preference center to allow customers to provide details about their personal information such as age, gender, and outdoor sporting interests. In which two ways should NTO honor customers’ preferences when creating emails? (Choose 2)",
+    options: [
+      "Create a dynamic rule based on customer’s preferences in order to send specific content.",
+      "Send customers one email per preference choice to ensure customer receives what they want.",
+      "Create emails to include all preference options so that customers do not miss any content.",
+      "Use AMPScript to dynamically pull in content associated with customer’s preferences.",
+    ],
+    answer: [
+      "Create a dynamic rule based on customer’s preferences in order to send specific content.",
+      "Use AMPScript to dynamically pull in content associated with customer’s preferences.",
+    ],
+    note:
+      "The correct answers, 'Create a dynamic rule based on customer’s preferences in order to send specific content' and 'Use AMPScript to dynamically pull in content associated with customer’s preferences,' allow NTO to personalize content based on customer preferences efficiently. Sending multiple emails for each preference or including all preference options in every email would overload customers with unnecessary information."
+  },
+  {
+    type: "multipleChoice",
+    question:
+      "A digital marketing team noticed an increase in unsubscribes and would like to implement a mechanism as an alternative to unsubscribing from all sends. The team currently uses data extensions for sending emails. Which tool should they use?",
+    options: [
+      "Suppression lists",
+      "List unsubscribe",
+      "Profile attributes",
+      "Publication lists",
+    ],
+    answer: "Publication lists",
+    note:
+      "The correct answer, 'Publication lists,' allows the marketing team to manage preferences and provide subscribers with the option to opt out of specific communication categories without unsubscribing from everything. Options like suppression lists or list unsubscribe would not provide the necessary flexibility to manage communication preferences."
+  },
+  {
+    type: "checkboxMultipleChoice",
+    question: "Which send process can use Sender Profiles? (Choose 3)",
+    options: [
+      "User-Initiated Sends",
+      "Test Sends",
+      "Triggered Sends",
+      "Simple Automated Sends",
+      "Guided Sends",
+    ],
+    answer: ["User-Initiated Sends", "Triggered Sends", "Guided Sends"],
+    note:
+      "The correct answers, 'User-Initiated Sends,' 'Triggered Sends,' and 'Guided Sends,' all support the use of Sender Profiles to customize the From Name and email address for the email send. Other processes like 'Test Sends' or 'Simple Automated Sends' do not typically use Sender Profiles in the same way."
+  },
+  {
+    type: "multipleChoice",
+    question:
+      "NTO uses HTML emails that have headers and footers coded into the email. What tool can the marketer use to control default headers and footers on email sends?",
+    options: [
+      "Delivery Profile",
+      "AMPScript Lookups",
+      "Dynamic Content",
+      "Sender Profile",
+    ],
+    answer: "Delivery Profile",
+    note:
+      "The correct answer, 'Delivery Profile,' allows marketers to control headers and footers at the send level without altering the HTML of each email. Options like AMPScript Lookups or Sender Profile are not appropriate for managing default headers and footers."
+  },
+  {
+    type: "multipleChoice",
+    question:
+      "Northern Trail Outfitters (NTO) is currently sending out a single welcome email when a subscriber joins its myNTO Rewards program. NTO wants to test whether one, two, or three welcome emails would result in a higher rate of conversion. How can this be accomplished most efficiently?",
+    options: [
+      "Journey Builder using a Random Split with three branches",
+      "A series of A/B tests to determine the number of emails",
+      "Automation Studio with three separate Welcome automations.",
+      "Journey Builder using a Decision Split with three branches",
+    ],
+    answer: "Journey Builder using a Random Split with three branches",
+    note:
+      "The correct answer, 'Journey Builder using a Random Split with three branches,' is ideal for testing multiple variations of the welcome email sequence in a single journey. This allows NTO to easily compare the effectiveness of sending one, two, or three emails. Running separate A/B tests or using Automation Studio would not be as efficient for comparing multiple branches."
+  },
+  {
+    type: "multipleChoice",
+    question:
+      "A marketer needs to import a text file and does not have access to the account’s Enhanced FTP site. What is the recommended way to import the data?",
+    options: [
+      "Import Subscriber Wizard",
+      "Data Extract Activity Interaction",
+      "Manual Data Filter Refresh",
+      "Import Activity Interaction",
+    ],
+    answer: "Import Subscriber Wizard",
+    note:
+      "The correct answer, 'Import Subscriber Wizard,' provides a user-friendly way to import data without requiring Enhanced FTP access. Other methods, such as the Data Extract Activity, would not be suitable for direct imports."
+  },
+  {
+    type: "checkboxMultipleChoice",
+    question:
+      "When creating a custom email with the HTML Paste Editor, which feature can be inserted into the HTML code by using the Insert Tools? (Choose 2)",
+    options: [
+      "Physical Mailing address",
+      "Link tooltips",
+      "Stored Content Boxes",
+      "Email Open Tracking",
+    ],
+    answer: ["Physical Mailing address", "Email Open Tracking"],
+    note:
+      "The correct answers, 'Physical Mailing address' and 'Email Open Tracking,' are features that can be inserted using the HTML Paste Editor’s Insert Tools. These are crucial for compliance and tracking. Options like link tooltips or stored content boxes are not inserted in the same way."
+  },
+  {
+    type: "checkboxMultipleChoice",
+    question:
+      "An email marketer has been tasked with increasing open rates on a weekly newsletter that currently uses a consistent, identifiable subject line: 'NTO Weekly: Topics of interest this week.' Which two best practices should the marketer use to make the subject line more effective? (Choose 2)",
+    options: [
+      "Keep the subject text between 50 and 100 characters long",
+      "Include information relevant to the message in the subject line",
+      "A/B test the effectiveness of different subjects",
+      "Include “RE:”, “FWD:”, etc., to get the reader’s attention",
+    ],
+    answer: [
+      "Include information relevant to the message in the subject line",
+      "A/B test the effectiveness of different subjects",
+    ],
+    note:
+      "The correct answers, 'Include information relevant to the message in the subject line' and 'A/B test the effectiveness of different subjects,' focus on improving relevance and using testing to determine the best-performing subject lines. Lengthening the subject line or adding “RE:” or “FWD:” would not necessarily increase open rates and may be viewed as deceptive by recipients."
+  },
+  {
+    type: "checkboxMultipleChoice",
+    question:
+      "Northern Trail Outfitters (NTO) needs to use a point-and-click tool to test segmentation rules and verify that the correct subscribers are included in the segment. NTO will need to automate the refreshing of the segment once it is tested. Which two tools should be used to test and configure the segment? (Choose 2)",
+    options: [
+      "Filter Activity",
+      "Filtered Group",
+      "SQL Query Activity",
+      "Data Filter",
+    ],
+    answer: ["Filter Activity", "Data Filter"],
+    note:
+      "The correct answers, 'Filter Activity' and 'Data Filter,' allow NTO to test and automate segmentation based on predefined rules. These tools provide the flexibility needed for recurring segmentation tasks, unlike SQL Query Activity, which requires more technical skills, or Filtered Group, which is not as robust for ongoing automation."
+  },
+  {
+    type: "checkboxMultipleChoice",
+    question:
+      "A marketer needs to create an attribute named Gender that has a drop-down menu with appropriate values in the Profile Center. How can this be accomplished? (Choose 2)",
+    options: [
+      "Set a custom maximum length of six",
+      "Select the attribute as required",
+      "Create restricted values",
+      "Select the data type as Text",
+    ],
+    answer: ["Create restricted values", "Select the data type as Text"],
+    note:
+      "The correct answers, 'Create restricted values' and 'Select the data type as Text,' ensure that the Gender attribute has controlled input options and is presented as a text-based field in the Profile Center. Setting a custom maximum length or making the attribute required are additional settings but do not directly relate to creating a drop-down menu."
   },
 ];
