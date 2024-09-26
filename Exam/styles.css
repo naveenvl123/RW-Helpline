@@ -56,7 +56,13 @@ div#counter {
     max-width: 100%; /* or set a specific width like 600px if needed */
 }
 
-
+.note-message {
+    color: green;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    display: block;
+  }
+  
 .error-message {
     color: red;
     font-size: 0.9rem;

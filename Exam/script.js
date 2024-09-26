@@ -141,7 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const resultElement = document.getElementById("result");
         resultElement.style.display = "none";
 
-        let allQuestionsAnswered = true;
         questions.forEach((q, index) => {
             const questionElement = questionContainer.children[index];
             const errorMessage = questionElement.querySelector(".error-message");
@@ -151,7 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (selectedInputs.length === 0) {
                 errorMessage.style.display = "block";
                 questionElement.classList.add("question-unanswered");
-                allQuestionsAnswered = false;
             } else {
                 errorMessage.style.display = "none";
                 questionElement.classList.remove("question-unanswered");
@@ -176,6 +174,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (isCorrect) {
                     totalScore += maxScorePerQuestion;
+                }
+
+                // Check if note message already exists
+                if (!questionElement.querySelector(".note-message")) {
+                    // Add note after the options if it doesn't exist
+                    let noteElement = document.createElement("div");
+                    noteElement.classList.add("note-message");
+                    noteElement.style.color = "green"; // Note in green color
+                    noteElement.textContent = q.note; // Display the note from the question object
+                    questionElement.appendChild(noteElement);
                 }
             }
         });
