@@ -1,3 +1,12 @@
+:root {
+    --color2: #fff;
+    --color1: #1c1c1c;
+    --color3: #c1bfbf;
+    --red: #ff0000;
+    --blue: #007bff;
+    --green: #008000;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,7 +15,7 @@
 
 body {
     font-family: "Russo One", sans-serif;
-    color: #444;
+    color: var(--color1);
     display: flex;
     font-weight: 600;
     justify-content: center;
@@ -14,10 +23,10 @@ body {
     min-height: 100vh;
     padding: 20px;
     overflow-x: hidden;
+    background: var(--color2);
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     width: 100%;
     animation: fadeIn 1s ease-in-out;
@@ -27,7 +36,6 @@ body {
 h1 {
     text-align: center;
     font-size: 1.5rem;
-    color: #222;
     margin-bottom: 1rem;
     animation: fadeIn 1s ease-in-out;
 }
@@ -46,25 +54,25 @@ div#counter {
 .question p {
     font-size: 1rem;
     margin-bottom: 1rem;
-    color: #222;
     animation: fadeIn 1s ease-in-out;
 }
 
 .question p {
     white-space: normal;
     word-wrap: break-word;
-    max-width: 100%; /* or set a specific width like 600px if needed */
+    max-width: 100%;
+    /* or set a specific width like 600px if needed */
 }
 
 .note-message {
-    color: green;
-    font-size: 0.9rem;
+    color: var(--green);
+    font-size: 1.2rem;
     margin-top: 10px;
     display: block;
-  }
-  
+}
+
 .error-message {
-    color: red;
+    color: var(--red);
     font-size: 0.9rem;
     position: absolute;
     top: -20px;
@@ -83,33 +91,32 @@ div#counter {
     font-weight: 500;
     display: flex;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.2);
     padding: 10px 10px 10px 35px;
     border-radius: 8px;
     cursor: pointer;
     border: 2px solid transparent;
-    transition: background-color 0.3s ease-in-out, border-color 0s, transform 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s, transform 0.3s ease-in-out;
     position: relative;
 }
 
 .option-label.selected {
-    background: radial-gradient(circle at 15% 15%, #87e2ff, #00c2ff);
-    border-color: #fff;
+    background: radial-gradient(circle at 15% 15%, #00c2ff, #87e2ff);
+    border-color: var(--color1);
     transform: translateX(25px);
 }
 
 .option-label:hover {
-    background-color: rgb(229 229 229);
+    background-color: var(--color3);
 }
 
 .option-label.correct {
     background: #8ffda8c4;
-    border-color: #ffffff;
+    border-color: var(--color1);
 }
 
 .option-label.wrong {
     background: #ff98a2c7;
-    border-color: #ffffff;
+    border-color: var(--color1);
     transform: translateX(-10px);
 }
 
@@ -133,33 +140,35 @@ input[type="checkbox"] {
 input[type="radio"]+.option-prefix {
     border-radius: 50%;
     border: 2px solid #444;
-    background-color: #fff;
+    background-color: var(--color2);
+    color: #444;
 }
 
 input[type="radio"]:checked+.option-prefix {
-    background-color: #007bff;
-    border-color: #007bff;
-    color: #fff;
+    background-color: var(--blue);
+    border-color: var(--blue);
+    color: var(--color2);
 }
 
 input[type="checkbox"]+.option-prefix {
     border-radius: 5px;
     border: 2px solid #444;
-    background-color: #fff;
+    background-color: var(--color2);
+    color: #444;
 }
 
 input[type="checkbox"]:checked+.option-prefix {
-    background-color: #007bff;
-    border-color: #007bff;
-    color: #fff;
+    background-color: var(--blue);
+    border-color: var(--blue);
+    color: var(--color2);
 }
 
 button {
     display: block;
     padding: 15px 15px;
     font-size: 1.2rem;
-    background-color: #007bff;
-    color: #fff;
+    background-color: var(--blue);
+    color: var(--color1);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -171,7 +180,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: var(--blue);
     transform: scale(1.05);
 }
 
@@ -188,31 +197,39 @@ button:hover {
 
 #result.pass {
     background-color: #28a745;
-    color: #fff;
+    color: var(--color1);
 }
 
 #result.fail {
     background-color: #dc3545;
-    color: #fff;
+    color: var(--color1);
 }
 
 .question-unanswered p {
-    color: red;
+    color: var(--red);
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
 
 @keyframes bounceIn {
-    0%, 20%, 40%, 60%, 80%, 100% {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
