@@ -380,7 +380,7 @@ const multipleChoiceQuestions = [
   {
     type: "checkboxMultipleChoice",
     question:
-      "A marketing associate wants to use the Validate button to ensure an email is CAN-SPAM compliant. What information does the associate need to provide in order for the email to pass validation?",
+      "A marketing associate wants to use the Validate button to ensure an email is CAN-SPAM compliant. What information does the associate need to provide in order for the email to pass validation? (Choose 2)",
     options: [
       "Company Website URL",
       "Profile Center URL",

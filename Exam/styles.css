@@ -2,7 +2,7 @@
     --color2: #ebe4e4;
     --color1: #1c1c1c;
     --color3: #c1bfbf;
-    --red: #ff0000;
+    --red: #8e0000;
     --blue: #007bff;
     --green: #008000;
 }
@@ -52,7 +52,8 @@ div#counter {
 }
 
 .question p {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
     margin-bottom: 1rem;
     animation: fadeIn 1s ease-in-out;
 }
@@ -100,9 +101,10 @@ div#counter {
 }
 
 .option-label.selected {
-    background: radial-gradient(circle at 15% 15%, #00c2ff, #87e2ff);
+    background: radial-gradient(circle at 15% 15%, #87e2ff, #00c2ff);
     border-color: var(--color1);
     transform: translateX(25px);
+    color: var(--color1);
 }
 
 .option-label:hover {
